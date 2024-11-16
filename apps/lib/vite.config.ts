@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   build: {
     lib: {
-      entry: resolve("./src/index.ts"),
+      entry: resolve("./src/main.ts"),
       name: "perceptui",
       fileName: "perceptui",
     },
