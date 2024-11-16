@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 const colors = {
   black: "black",
   dark: "slate",
-  light:"white",
+  light: "white",
   blue: "blue",
   red: "red",
   green: "green",
@@ -112,27 +112,27 @@ const colorClasses = {
     outline: "text-sky-600 border-sky-500 bg-transparent hover:bg-sky-100",
     ghost: "text-sky-600 bg-transparent hover:bg-sky-100",
   },
-  black:{
+  black: {
     solid: "bg-black hover:bg-gray-900",
     outline: "text-black border-black bg-transparent hover:bg-gray-100",
     ghost: "text-black bg-transparent hover:bg-gray-100",
   },
-  dark:{
+  dark: {
     solid: "bg-slate-800 hover:bg-gray-700",
-    outline: "text-slate-800 border-slate-800 bg-transparent hover:bg-slate-700",
+    outline:
+      "text-slate-800 border-slate-800 bg-transparent hover:bg-slate-700",
     ghost: "text-slate-800 bg-transparent hover:bg-slate-100",
   },
-  light:{
+  light: {
     solid: "bg-white hover:bg-slate-100 text-slate-700",
-    outline: "text-white border-white bg-transparent hover:bg-slate-100 hover:text-slate-700",
+    outline:
+      "text-white border-white bg-transparent hover:bg-slate-100 hover:text-slate-700",
     ghost: "text-white bg-transparent hover:bg-slate-100 hover:text-slate-700",
   },
-  
 };
 
 const buttonStyles = cva(
   [
-    "w-full",
     "rounded-md",
     "font-semibold",
     "focus:outline-none",
