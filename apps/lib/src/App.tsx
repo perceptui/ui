@@ -1,9 +1,9 @@
-import { Button } from "./components/button";
+import { Badge } from "./main";
 
 function App() {
   return (
     <div className="flex items-center justify-center h-screen w-screen">
-      <Button>Click</Button>
+      <Badge variant={"soft"} color={"red"} radius={"full"}>Badge</Badge>
     </div>
   );
 }

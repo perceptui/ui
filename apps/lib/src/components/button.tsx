@@ -2,7 +2,7 @@ import { cn } from "@/utils";
 import { VariantProps } from "class-variance-authority";
 import { ComponentProps, forwardRef } from "react";
 
-import { buttonStyles } from "@/styles/button.styles";
+import { buttonStyles } from "@/styles";
 
 type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonStyles>;
 
