@@ -11,7 +11,7 @@ Welcome to **Percept UI**, a comprehensive React component library designed to e
 - **Lightweight**: Focused on performance, Percept-UI components are optimized to load quickly.
 - **Well-documented**: Comprehensive documentation to help you integrate components seamlessly.
 
-<h5>An open-source component library optimized for fast development, easy maintenance, and accessibility.</h5>
+<h3>An open-source component library optimized for fast development, easy maintenance, and accessibility.</h3>
 
 <!-- ## Quickstart
 
