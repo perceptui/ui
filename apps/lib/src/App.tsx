@@ -1,9 +1,9 @@
-import { Alert } from "./main";
+import { Input } from "./main";
 
 function App() {
   return (
     <div className="flex items-center justify-center h-screen w-screen">
-      <Alert message={"This is a alert."} type={"error"} />
+      <Input variant="classic" radius="md" placeholder="Enter your name" />
     </div>
   );
 }
