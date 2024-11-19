@@ -11,7 +11,7 @@ type Types = keyof typeof types;
 
 const typeClasses = {
   success: {
-    solid: "bg-green-200 text-green-700 border-green-400",
+    solid: "bg-green-200 text-green-700 border-green-400 dark:border-green-500",
     outline: "bg-green-200 bg-opacity-20 text-green-400 border-green-400",
   },
   error: {
