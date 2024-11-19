@@ -15,7 +15,7 @@ type alertProps = VariantProps<typeof alertStyles> &
     type?: String;
     message: String;
     duration?: number;
-    loading?: boolean;
+    loading: boolean;
     icon?: React.ReactNode;
     className?: string;
   };
