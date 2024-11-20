@@ -1,9 +1,9 @@
-import { Alert } from "./main";
+import { Input } from "./main";
 
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen w-screen bg-zinc-900 px-12 container">
-      <Alert message="This is alert."/>
+    <div className="flex items-center justify-center h-screen w-screen">
+      <Input variant="classic" radius="md" placeholder="Enter your name" />
     </div>
   );
 }

@@ -12,7 +12,7 @@ export const inputStyles = cva(
   {
     variants: {
       variant: {
-        classic: "transition-colors duration-300 border rounded-md",
+        classic: "transition-colors duration-300 border",
         standard: "transition-colors duration-300 border-b",
         ghost: "border-0 transition-colors duration-300",
       },
@@ -39,5 +39,9 @@ export const inputStyles = cva(
         className: ``,
       },
     ],
+    defaultVariants: {
+      variant: "classic",
+      radius: "md",
+    },
   }
 );
