@@ -11,34 +11,30 @@ type Types = keyof typeof types;
 
 const typeClasses = {
   success: {
-    solid: "bg-green-200 text-green-700 border-green-400 dark:border-green-500",
-    outline: "bg-green-200 bg-opacity-20 text-green-400 border-green-400",
+    solid: "bg-green-800 text-white border-green-400 dark:border-green-500",
+    outline: "bg-green-600/20 bg-opacity-20 text-green-400 border-green-400",
   },
   error: {
-    solid: "bg-red-200 text-red-700 border-red-400",
-    outline: "bg-red-200 bg-opacity-20 text-red-400 border-red-400",
+    solid: "bg-red-800 text-white border-red-400",
+    outline: "bg-red-600/20 bg-opacity-20 text-red-400 border-red-400",
   },
   warning: {
-    solid: "bg-yellow-200 text-yellow-700 border-yellow-400",
-    outline: "bg-yellow-200 bg-opacity-20 text-yellow-400 border-yellow-400",
+    solid: "bg-yellow-800 text-white border-yellow-400",
+    outline: "bg-yellow-600/20 bg-opacity-20 text-yellow-400 border-yellow-400",
   },
   info: {
-    solid: "bg-blue-200 text-blue-700 border-blue-400",
-    outline: "bg-blue-200 bg-opacity-20 text-blue-400 border-blue-400",
+    solid: "bg-blue-800 text-white border-blue-400",
+    outline: "bg-blue-600/20 bg-opacity-20 text-blue-400 border-blue-400",
   },
 };
 
 const alertStyles = cva(
-  ["p-2 rounded border flex justify-start gap-2 items-center"],
+  ["p-2 rounded border flex justify-start gap-2 items-center w-full"],
   {
     variants: {
       variant: {
         solid: "border-transparent",
         outline: "bg-transparent",
-      },
-      withIcon: {
-        true: "",
-        false: "",
       },
       type: {
         success: "text-green-700",
