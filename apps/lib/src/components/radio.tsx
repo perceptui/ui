@@ -30,7 +30,7 @@ const RadioGroupContext = createContext<{
 
 export const RadioGroup: React.FC<RadioGroupProps> = ({
   children,
-  defaultValue = "",
+  defaultValue = "radio",
   onChange,
   name,
 }) => {
