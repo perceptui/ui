@@ -24,14 +24,6 @@ const colors = {
 
 type Colors = keyof typeof colors;
 
-const baseStates = {
-  focus: "focus:shadow-sm focus:shadow-blue-400",
-  hover:
-    "hover:border-gray-500 hover:shadow-md shadow-blue-600 dark:shadow-blue-400",
-  checked: "checked:shadow-sm checked:shadow-blue-400",
-  unchecked: "border-gray-300",
-};
-
 const colorClasses: Record<Colors, string> = {
   black: "checked:accent-black hover:checked:accent-gray-900",
   dark: "checked:accent-slate-800 hover:checked:accent-gray-700",
@@ -60,9 +52,6 @@ export const radioStyles = cva(
     "border-2",
     "rounded-sm",
     "transition-colors duration-300",
-    baseStates.focus,
-    baseStates.hover,
-    baseStates.unchecked,
   ],
   {
     variants: {
@@ -76,7 +65,7 @@ export const radioStyles = cva(
       color: Object.keys(colors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: `${colorClasses[key as Colors]} ${baseStates.checked}`,
+          [key]: `${colorClasses[key as Colors]}`,
         }),
         {} as Record<Colors, string>
       ),
