@@ -1,0 +1,27 @@
+{
+  "name": "@perceptui/cli",
+  "version": "0.0.1",
+  "description": "CLI for Percept-UI Templates",
+  "bin": {
+    "percept-ui": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "cli",
+    "perceptui-cli"
+  ],
+  "author": "@perceptui",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/commander": "^2.12.5",
+    "@types/node": "^22.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}
