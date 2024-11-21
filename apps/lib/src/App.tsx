@@ -1,13 +1,26 @@
-import { Radio, RadioGroup } from "./main";
+import { Button, Slider } from "./main";
 
 function App() {
+  const changeTheme = (mode: string) => {
+    const root = document.documentElement;
+    root.classList.remove("dark", "light");
+    root.classList.add(mode);
+  };
   return (
-    <div className="flex items-center justify-center h-screen w-screen">
-      <RadioGroup>
-        <Radio value="1">Option 1</Radio>
-        <Radio value="2">Option 2</Radio>
-        <Radio value="3">Option 3</Radio>
-      </RadioGroup>{" "}
+    <div className="flex flex-col items-center justify-center h-screen w-screen dark:bg-black">
+      <div className="flex items-center justify-between w-96">
+        <Button
+          onClick={() => changeTheme("dark")}
+          color="light"
+          variant="solid"
+        >
+          Dark Mode
+        </Button>
+        <Button onClick={() => changeTheme("light")} color="light" variant="solid">
+          Light Mode
+        </Button>
+      </div>
+      <Slider color="yellow" />
     </div>
   );
 }

@@ -5,3 +5,4 @@ export * from "./alert.styles";
 export * from "./input.styles";
 export * from "./check-box.styles";
 export * from "./radio.styles";
+export * from "./slider.styles";
