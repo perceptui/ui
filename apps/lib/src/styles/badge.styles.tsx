@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 const colors = {
   black: "black",
   dark: "slate",
-  light:"white",
+  light: "white",
   blue: "blue",
   red: "red",
   green: "green",
@@ -26,84 +26,77 @@ type Colors = keyof typeof colors;
 
 const colorClasses = {
   blue: {
-    solid: "bg-blue-600 hover:bg-blue-500",
+    solid: "bg-blue-600 ",
     outline: "text-blue-600 border-blue-500",
     soft: "text-blue-600 bg-blue-600",
   },
   red: {
-    solid: "bg-red-600 hover:bg-red-500",
+    solid: "bg-red-600 ",
     outline: "text-red-600 border-red-500",
     soft: "text-red-600 bg-red-600",
   },
   green: {
-    solid: "bg-green-600 hover:bg-green-500",
-    outline:
-      "text-green-600 border-green-500",
+    solid: "bg-green-600 ",
+    outline: "text-green-600 border-green-500",
     soft: "text-green-600 bg-green-600",
   },
   yellow: {
-    solid: "bg-yellow-600 hover:bg-yellow-500",
-    outline:
-      "text-yellow-600 border-yellow-500",
+    solid: "bg-yellow-600 ",
+    outline: "text-yellow-600 border-yellow-500",
     soft: "text-yellow-600 bg-yellow-600",
   },
   cyan: {
-    solid: "bg-cyan-600 hover:bg-cyan-500",
+    solid: "bg-cyan-600 ",
     outline: "text-cyan-600 border-cyan-500",
     soft: "text-cyan-600 bg-cyan-600",
   },
   gray: {
-    solid: "bg-gray-600 hover:bg-gray-500",
+    solid: "bg-gray-600 ",
     outline: "text-gray-600 border-gray-500",
     soft: "text-gray-600 bg-gray-600",
   },
   emerald: {
-    solid: "bg-emerald-600 hover:bg-emerald-500",
-    outline:
-      "text-emerald-600 border-emerald-500",
+    solid: "bg-emerald-600 ",
+    outline: "text-emerald-600 border-emerald-500",
     soft: "text-emerald-600 bg-emerald-600",
   },
   rose: {
-    solid: "bg-rose-600 hover:bg-rose-500",
+    solid: "bg-rose-600 ",
     outline: "text-rose-600 border-rose-500",
     soft: "text-rose-600 bg-rose-600",
   },
   amber: {
-    solid: "bg-amber-600 hover:bg-amber-500",
-    outline:
-      "text-amber-600 border-amber-500",
+    solid: "bg-amber-600 ",
+    outline: "text-amber-600 border-amber-500",
     soft: "text-amber-600 bg-amber-600",
   },
   orange: {
-    solid: "bg-orange-600 hover:bg-orange-500",
-    outline:
-      "text-orange-600 border-orange-500",
+    solid: "bg-orange-600 ",
+    outline: "text-orange-600 border-orange-500",
     soft: "text-orange-600 bg-orange-600",
   },
   pink: {
-    solid: "bg-pink-600 hover:bg-pink-500",
+    solid: "bg-pink-600 ",
     outline: "text-pink-600 border-pink-500",
     soft: "text-pink-600 bg-pink-600",
   },
   purple: {
-    solid: "bg-purple-600 hover:bg-purple-500",
-    outline:
-      "text-purple-600 border-purple-500",
+    solid: "bg-purple-600 ",
+    outline: "text-purple-600 border-purple-500",
     soft: "text-purple-600 bg-purple-600",
   },
   indigo: {
-    solid: "bg-indigo-600 hover:bg-indigo-500",
-    outline:
-      "text-indigo-600 border-indigo-500",
+    solid: "bg-indigo-600 ",
+    outline: "text-indigo-600 border-indigo-500",
     soft: "text-indigo-600 bg-indigo-600",
   },
   teal: {
-    solid: "bg-teal-600 hover:bg-teal-500",
+    solid: "bg-teal-600 ",
     outline: "text-teal-600 border-teal-500",
     soft: "text-teal-600 bg-teal-600",
   },
   lime: {
-    solid: "bg-lime-600 hover:bg-lime-500",
+    solid: "bg-lime-600 ",
     outline: "text-lime-600 border-lime-500",
     soft: "text-lime-600 bg-lime-600",
   },
@@ -112,22 +105,21 @@ const colorClasses = {
     outline: "text-sky-600 border-sky-500",
     soft: "text-sky-600 bg-sky-600",
   },
-  black:{
+  black: {
     solid: "bg-black",
     outline: "text-black border-black",
     soft: "text-black bg-black",
   },
-  dark:{
+  dark: {
     solid: "bg-slate-800",
     outline: "text-slate-800 border-slate-800",
     soft: "text-slate-800 bg-slate-700",
   },
-  light:{
+  light: {
     solid: "bg-white text-slate-700",
     outline: "text-white border-white",
     soft: "text-white bg-white",
   },
-  
 };
 
 const badgeStyles = cva(
@@ -186,7 +178,7 @@ const badgeStyles = cva(
     ]),
     defaultVariants: {
       variant: "solid",
-      size: "md",
+      size: "xs",
       radius: "md",
       color: "blue",
     },

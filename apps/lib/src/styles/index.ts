@@ -6,3 +6,4 @@ export * from "./input.styles";
 export * from "./check-box.styles";
 export * from "./radio.styles";
 export * from "./slider.styles";
+export * from "./spinner.styles"
