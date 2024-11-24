@@ -8,6 +8,7 @@ export * from "@/components/checkbox";
 export * from "@/components/radio";
 export * from "@/components/slider";
 export * from "@/components/spinner";
+export * from "@/components/switch";
 
 export * from "@/styles";
 export * from "@/utils";
