@@ -1,4 +1,4 @@
-import { Button, Slider } from "./main";
+import { Button, Slider, Spinner } from "./main";
 
 function App() {
   const changeTheme = (mode: string) => {
@@ -16,11 +16,15 @@ function App() {
         >
           Dark Mode
         </Button>
-        <Button onClick={() => changeTheme("light")} color="light" variant="solid">
+        <Button
+          onClick={() => changeTheme("light")}
+          color="light"
+          variant="solid"
+        >
           Light Mode
         </Button>
       </div>
-      <Slider color="yellow" />
+      <Spinner />
     </div>
   );
 }
