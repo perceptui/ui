@@ -1,26 +1,13 @@
 import { radioStyles } from "@/styles";
+import { RadioGroupProps, RadioProps } from "@/types";
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
 import React, {
-  ComponentProps,
   createContext,
   forwardRef,
   useContext,
   useId,
   useState,
 } from "react";
-
-type RadioProps = ComponentProps<"input"> &
-  VariantProps<typeof radioStyles> & {
-    label?: string;
-  };
-
-type RadioGroupProps = {
-  children: React.ReactNode;
-  defaultValue?: string;
-  onChange?: (value: string) => void;
-  name?: string;
-};
 
 const RadioGroupContext = createContext<{
   value: string;

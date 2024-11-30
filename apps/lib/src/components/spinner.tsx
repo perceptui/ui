@@ -1,9 +1,7 @@
 import { spinnerStyles } from "@/styles";
+import { SpinnerProps } from "@/types";
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
-import { ComponentProps, forwardRef } from "react";
-
-type SpinnerProps = ComponentProps<"div"> & VariantProps<typeof spinnerStyles>;
+import { forwardRef } from "react";
 
 export const Spinner = forwardRef<HTMLInputElement, SpinnerProps>(
   ({ className, color, size, ...props }, forwardedRef) => (

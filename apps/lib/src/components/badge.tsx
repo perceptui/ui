@@ -1,10 +1,7 @@
 import { cn } from "@/utils";
 import { VariantProps } from "class-variance-authority";
 import { badgeStyles } from "@/styles";
-
-type badgeProps = VariantProps<typeof badgeStyles> & {
-  children: React.ReactNode;
-};
+import { badgeProps } from "@/types";
 
 export const Badge: React.FC<badgeProps> = ({
   variant,

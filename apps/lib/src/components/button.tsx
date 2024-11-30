@@ -1,10 +1,9 @@
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
-import { ComponentProps, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { buttonStyles } from "@/styles";
+import { ButtonProps } from "@/types";
 
-type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonStyles>;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, size, radius, color, className, ...props }, forwardedRef) => (

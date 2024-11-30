@@ -1,21 +1,12 @@
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
 import { alertStyles } from "@/styles";
-import { ComponentProps } from "react";
 import {
   IoCheckmarkDoneCircle,
   IoInformationCircleOutline,
 } from "react-icons/io5";
 import { PiSealWarning } from "react-icons/pi";
 import { BiError } from "react-icons/bi";
-
-type alertProps = VariantProps<typeof alertStyles> &
-  ComponentProps<"div"> & {
-    type?: String;
-    message: String;
-    icon?: React.ReactNode;
-    className?: string;
-  };
+import { alertProps } from "@/types";
 
 export const Alert: React.FC<alertProps> = ({
   variant,
@@ -23,6 +14,7 @@ export const Alert: React.FC<alertProps> = ({
   message,
   icon,
   className,
+  children,
 }) => {
   return (
     <div className={cn("w-full", className, alertStyles({ variant, type }))}>
@@ -39,7 +31,7 @@ export const Alert: React.FC<alertProps> = ({
           <IoInformationCircleOutline />
         )}
       </span>
-      <p>{message}</p>
+      <p>{message || children}</p>
     </div>
   );
 };

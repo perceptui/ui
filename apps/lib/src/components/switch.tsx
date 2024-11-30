@@ -1,14 +1,7 @@
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
-import { ComponentProps, forwardRef } from "react";
+import { forwardRef } from "react";
 import { switchStyles, switchButtonVariants } from "@/styles";
-
-type SwitchProps = ComponentProps<"input"> &
-  VariantProps<typeof switchStyles> &
-  VariantProps<typeof switchButtonVariants> & {
-    color?: string;
-    size?: string;
-  };
+import { SwitchProps } from "@/types";
 
 export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
   ({ className, color, size, ...props }, ref) => (

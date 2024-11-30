@@ -1,16 +1,7 @@
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
 import { avatarStyles } from "@/styles";
-import { ComponentProps, forwardRef } from "react";
-
-type avatarProps = ComponentProps<"div"> & VariantProps<typeof avatarStyles>;
-type avatarImageProps = ComponentProps<"img"> &
-  VariantProps<typeof avatarStyles> & {
-    src?: string;
-  };
-type avatarFallbackProps = ComponentProps<"div"> & {
-  src?: string;
-};
+import { forwardRef } from "react";
+import { avatarFallbackProps, avatarImageProps, avatarProps } from "@/types";
 
 export const Avatar = forwardRef<HTMLDivElement, avatarProps>(
   ({ variant, color, radius, className, children, ...props }, forwardedRef) => (

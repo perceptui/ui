@@ -1,7 +1,6 @@
+import { LabelProps } from "@/types";
 import { cn } from "@/utils";
-import { ComponentProps, forwardRef } from "react";
-
-type LabelProps = ComponentProps<"label">;
+import { forwardRef } from "react";
 
 export const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ className, children, ...props }, forwardedRef) => (

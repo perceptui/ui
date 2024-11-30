@@ -1,10 +1,7 @@
 import { checkboxStyles } from "@/styles";
+import { CheckboxProps } from "@/types";
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
-import { ComponentProps, forwardRef } from "react";
-
-type CheckboxProps = ComponentProps<"input"> &
-  VariantProps<typeof checkboxStyles>;
+import { forwardRef } from "react";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ size, color, className, children, ...props }, forwardedRef) => (

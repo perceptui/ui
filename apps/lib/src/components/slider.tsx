@@ -1,9 +1,7 @@
 import { sliderStyles } from "@/styles";
+import { SliderProps } from "@/types";
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
-import { ComponentProps, forwardRef } from "react";
-
-type SliderProps = ComponentProps<"input"> & VariantProps<typeof sliderStyles>;
+import { forwardRef } from "react";
 
 export const Slider = forwardRef<HTMLInputElement, SliderProps>(
   ({ className, color, size, ...props }, forwardedRef) => (
