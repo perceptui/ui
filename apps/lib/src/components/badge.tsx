@@ -1,5 +1,4 @@
 import { cn } from "@/utils";
-import { VariantProps } from "class-variance-authority";
 import { badgeStyles } from "@/styles";
 import { badgeProps } from "@/types";
 
