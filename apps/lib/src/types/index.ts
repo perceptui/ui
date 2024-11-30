@@ -14,8 +14,10 @@ import {
   switchStyles,
 } from "@/styles";
 
-type Size = NonNullable<VariantProps<typeof switchStyles>["size"]>;
-type Color = NonNullable<VariantProps<typeof switchButtonVariants>["color"]>;
+export type Size = NonNullable<VariantProps<typeof switchStyles>["size"]>;
+export type Color = NonNullable<
+  VariantProps<typeof switchButtonVariants>["color"]
+>;
 
 export type alertProps = VariantProps<typeof alertStyles> &
   ComponentProps<"div"> & {
@@ -67,3 +69,4 @@ export type SwitchProps = Omit<ComponentProps<"input">, "size"> &
     color?: Color;
     size?: Size;
   };
+export * from "@/styles";
