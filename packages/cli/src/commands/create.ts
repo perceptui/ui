@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import ora from 'ora';
-import { getTemplate } from '../utils/templates.js';
+import { getAllTemplates, getTemplate } from '../utils/templates.js';
 import { cloneRepo } from '../utils/cloneRepo.js';
 import pkg from 'enquirer';
 import { installDependencies } from '../utils/installations.js';
@@ -20,9 +20,7 @@ export async function createProject(projectName: string, options: CreateOptions)
                 type: 'select',
                 name: 'template',
                 message: 'Select a template:',
-                choices: [
-                    { name: 'vite-react-tailwind', message: 'Vite + React + Tailwind' },
-                ]
+                choices: await getAllTemplates().then(templates => templates.map(t => t.name))
             });
             options.template = response.template;
         }

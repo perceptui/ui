@@ -15,6 +15,21 @@ const config = new Conf<{ templates: Template[] }>({
         repo: "github:perceptui/vite-react-tailwind-template",
         description: "Vite + React + Tailwind CSS starter template",
       },
+      {
+        name: "vite-react-ts-tailwind",
+        repo: "github:perceptui/vite-react-ts-tailwind-template",
+        description: "Vite + React + TS + Tailwind CSS starter template",
+      },
+      {
+        name: 'vite-react-shadcn',
+        repo: 'github:perceptui/vite-react-shadcn-template',
+        description: 'Vite + React + ShadcnUI starter template'
+      },
+      {
+        name: 'next-shadcn',
+        repo: 'github:perceptui/next-shadcn-template',
+        description: 'Next.js + ShadcnUI starter template'
+      },
     ],
   },
 });

@@ -12,8 +12,8 @@ export const list = async () => {
     }
     console.log(chalk.green("\nAvailable templates:\n"));
 
-    templates.forEach((template) => {
-      console.log(chalk.cyan(template.name));
+    templates.map((template) => {
+      console.log(chalk.cyan(`- ${template.name}`));
     });
 
   } catch (error) {
