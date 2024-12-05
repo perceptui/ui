@@ -21,18 +21,19 @@ const config = new Conf<{ templates: Template[] }>({
         description: "Vite + React + TS + Tailwind CSS starter template",
       },
       {
-        name: 'vite-react-shadcn',
-        repo: 'github:perceptui/vite-react-shadcn-template',
-        description: 'Vite + React + ShadcnUI starter template'
+        name: "vite-react-shadcn",
+        repo: "github:perceptui/vite-react-shadcn-template",
+        description: "Vite + React + ShadcnUI starter template",
       },
       {
-        name: 'next-shadcn',
-        repo: 'github:perceptui/next-shadcn-template',
-        description: 'Next.js + ShadcnUI starter template'
+        name: "next-shadcn",
+        repo: "github:perceptui/next-shadcn-template",
+        description: "Next.js + ShadcnUI starter template",
       },
     ],
   },
 });
+
 
 /**
  * Retrieve a specific template by name
@@ -61,6 +62,8 @@ export async function getTemplate(name: string): Promise<Template | undefined> {
  */
 export async function getAllTemplates(): Promise<Template[]> {
   const templates = config.get("templates");
+
+  console.log("Retrieved templates from configuration:", templates);
 
   if (!templates || templates.length === 0) {
     console.error("No templates available in the registry.");
