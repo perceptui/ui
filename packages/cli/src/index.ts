@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { program } from "commander";
 import chalk from "chalk";
 import { list } from "./commands/list.js";
@@ -33,6 +34,7 @@ program
   .option("-t, --template <template>", "Template to use")
   .option("-p, --path <path>", "Path to create the project in", ".")
   .action(createProject)
+
 program
   .command("list")
   .description("List all available templates")
@@ -47,4 +49,4 @@ program
     console.log(chalk.yellow("This feature is under development."));
   });
 
-program.parse();
+program.parse(process.argv);

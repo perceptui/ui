@@ -21,7 +21,6 @@ export async function createProject(projectName: string, options: CreateOptions)
                 name: 'template',
                 message: 'Select a template:',
                 choices: [
-                    { name: 'next-shadcn', message: 'Next.js + ShadcnUI' },
                     { name: 'vite-react-tailwind', message: 'Vite + React + Tailwind' },
                 ]
             });
