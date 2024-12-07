@@ -1,5 +1,4 @@
 import chalk from "chalk";
-import Conf from "conf";
 import fetch from "node-fetch";
 
 interface Template {
@@ -8,6 +7,38 @@ interface Template {
   description: string;
 }
 
+/**
+ * Retrieve a specific template by name
+ * @param name - Name of the template
+ * @returns The template or undefined if not found
+ */
+
+export const getTemplate = async (name: string) => {
+  try {
+    const response = await fetch(`https://templates-api-otor.onrender.com/template/${name}`);
+
+    if (!response.ok) {
+      const error = await response.json(); // Parse error response
+      console.log(chalk.red((error as any).message || "Failed to fetch the template."));
+      return null; // Return null if the fetch fails
+    }
+
+    const template = await response.json() as Template; // Parse successful response
+    return template;
+  } catch (error) {
+    if (error instanceof Error) {
+      console.log(chalk.red("An error occurred while fetching the template:"), error.message);
+    } else {
+      console.log(chalk.red("An unknown error occurred while fetching the template."));
+    }
+    return null; // Return null in case of any unexpected errors
+  }
+};
+
+/**
+ * Retrieve all available templates
+ * @returns An array of templates
+ */
 export const getTemplates = async () => {
   try {
     const response = await fetch("https://templates-api-otor.onrender.com/templates");
@@ -18,95 +49,12 @@ export const getTemplates = async () => {
     }
 
     const templates = await response.json() as Template[];
-
-    // Iterate through the array
-    templates.forEach((template: { name: string; repo: string; description: string }) => {
-      console.log(`Name: ${template.name}`);
-      console.log(`Repo: ${template.repo}`);
-      console.log(`Description: ${template.description}`);
-      console.log('---');
-    });
-
     return templates;
   } catch (error) {
     console.log(chalk.red("An error occurred while fetching templates:"), error);
     return [];
   }
 };
-
-export const getTemplate = async (name: string) => {
-  const template = await fetch(`https://templates-api-otor.onrender.com/templates/${name}`);
-  if (!template.ok) {
-    console.log(chalk.red(`Failed to fetch template '${name}' from the registry.`));
-  }
-  return template.json;
-}
-// const config = new Conf<{ templates: Template[] }>({
-//   projectName: "percept-cli",
-//   defaults: {
-//     templates: [
-//       {
-//         name: "vite-react-tailwind",
-//         repo: "github:perceptui/vite-react-tailwind-template",
-//         description: "Vite + React + Tailwind CSS starter template",
-//       },
-//       {
-//         name: "vite-react-ts-tailwind",
-//         repo: "github:perceptui/vite-react-ts-tailwind-template",
-//         description: "Vite + React + TS + Tailwind CSS starter template",
-//       },
-//       {
-//         name: "vite-react-shadcn",
-//         repo: "github:perceptui/vite-react-shadcn-template",
-//         description: "Vite + React + ShadcnUI starter template",
-//       },
-//       {
-//         name: "next-shadcn",
-//         repo: "github:perceptui/next-shadcn-template",
-//         description: "Next.js + ShadcnUI starter template",
-//       },
-//     ],
-//   },
-// });
-
-
-/**
- * Retrieve a specific template by name
- * @param name - Name of the template
- * @returns The template or undefined if not found
- */
-// export async function getTemplate(name: string): Promise<Template | undefined> {
-//   const templates = config.get("templates");
-
-//   if (!templates || templates.length === 0) {
-//     console.error("No templates found in configuration.");
-//     return undefined;
-//   }
-
-//   const template = templates.find((t) => t.name === name);
-//   if (!template) {
-//     console.error(`Template with name '${name}' not found.`);
-//   }
-
-//   return template;
-// }
-
-/**
- * Retrieve all available templates
- * @returns An array of templates
- */
-// export async function getAllTemplates(): Promise<Template[]> {
-//   const templates = config.get("templates");
-
-//   console.log("Retrieved templates from configuration:", templates);
-
-//   if (!templates || templates.length === 0) {
-//     console.error("No templates available in the registry.");
-//     return [];
-//   }
-
-//   return templates;
-// }
 
 /**
  * Add a new template to the registry

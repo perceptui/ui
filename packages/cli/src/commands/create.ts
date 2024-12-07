@@ -20,7 +20,7 @@ export async function createProject(projectName: string, options: CreateOptions)
                 type: 'select',
                 name: 'template',
                 message: 'Select a template:',
-                // choices: await getTemplates().then(templates => templates.map(t => t.name))
+                choices: await getTemplates().then(templates => templates.map(t => t.name))
             });
             options.template = response.template;
         }
@@ -34,7 +34,7 @@ export async function createProject(projectName: string, options: CreateOptions)
         }
 
         // Clone the template
-        // await cloneRepo(template.repo, projectName);
+        await cloneRepo(template.repo, projectName);
         spinner.succeed(chalk.green('Project created successfully'));
 
         // Install dependencies
