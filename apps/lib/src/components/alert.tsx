@@ -7,17 +7,14 @@ import {
 import { PiSealWarning } from "react-icons/pi";
 import { BiError } from "react-icons/bi";
 import { alertProps } from "@/types";
+import { forwardRef } from "react";
 
-export const Alert: React.FC<alertProps> = ({
-  variant,
-  type,
-  message,
-  icon,
-  className,
-  children,
-}) => {
-  return (
-    <div className={cn("w-full", className, alertStyles({ variant, type }))}>
+export const Alert = forwardRef<HTMLDivElement, alertProps>(
+  ({ variant, type, message, icon, className, children }, forwardedRef) => (
+    <div
+      ref={forwardedRef}
+      className={cn("w-full", className, alertStyles({ variant, type }))}
+    >
       <span className="text-xl font-bold">
         {icon ? (
           icon
@@ -33,7 +30,7 @@ export const Alert: React.FC<alertProps> = ({
       </span>
       <p>{message || children}</p>
     </div>
-  );
-};
+  )
+);
 
 Alert.displayName = "Alert";

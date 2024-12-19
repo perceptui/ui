@@ -1,4 +1,4 @@
-import { Button } from "./main";
+import { Alert, Button } from "./main";
 
 function App() {
   const changeTheme = (mode: string) => {
@@ -24,9 +24,10 @@ function App() {
           Light Mode
         </Button>
       </div>
-      <Button size={"lg"} color="black">
-        Button
-      </Button>
+      <Alert
+        type="success"
+        message="This is a success alert"
+      />
     </div>
   );
 }
