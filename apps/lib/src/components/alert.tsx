@@ -8,8 +8,11 @@ import { PiSealWarning } from "react-icons/pi";
 import { BiError } from "react-icons/bi";
 import { alertProps } from "@/types";
 import { forwardRef } from "react";
+import { alertStylesProps } from "@/styles/recipe.types";
 
-export const Alert = forwardRef<HTMLDivElement, alertProps>(
+export type alertProp = alertStylesProps & alertProps;
+
+export const Alert = forwardRef<HTMLDivElement, alertProp>(
   ({ variant, type, message, icon, className, children }, forwardedRef) => (
     <div
       ref={forwardedRef}

@@ -1,14 +1,20 @@
 import { spinnerStyles } from "@/styles";
+import { spinnerStylesProps } from "@/styles/recipe.types";
 import { SpinnerProps } from "@/types";
 import { cn } from "@/utils";
 import { forwardRef } from "react";
 
-export const Spinner = forwardRef<HTMLInputElement, SpinnerProps>(
+export type SpinnerProp = SpinnerProps &
+  spinnerStylesProps & {
+    className?: string;
+  };
+
+export const Spinner = forwardRef<HTMLInputElement, SpinnerProp>(
   ({ className, color, size, ...props }, forwardedRef) => (
     <div
       {...props}
       ref={forwardedRef}
-      className={cn(spinnerStyles({ size, className, color }))}
+      className={cn(className, spinnerStyles({ size, className, color }))}
     />
   )
 );
