@@ -1,5 +1,7 @@
 # Percept-UI Documentation
 
+<img src="https://github.com/perceptui/docs/blob/main/assets/preview.png"/>
+
 ## Introduction
 
 Welcome to **Percept UI**, a comprehensive React component library designed to enhance your web applications with high-quality, accessible, and customizable UI components. Whether you're building a simple website or a complex web application, Percept-UI offers a variety of components to meet your needs.
