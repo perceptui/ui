@@ -49,9 +49,10 @@ export async function createProject(projectName: string, options: CreateOptions)
 
         console.log('\n' + chalk.green('✨ Project is ready!'));
         console.log('\nNext steps:');
-        console.log(chalk.cyan(`  cd ${projectName}`));
+        if (projectName !== '.') {
+            console.log(chalk.cyan(`  cd ${projectName}`));
+        }
         console.log(chalk.cyan('  npm run dev'));
-
     } catch (error) {
         console.error(chalk.red('Error creating project:'), error);
         process.exit(1);

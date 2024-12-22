@@ -13,25 +13,40 @@ interface Template {
  * @returns The template or undefined if not found
  */
 
+const templates = [
+  {
+    name: "vite-react-tailwind",
+    repo: "github:perceptui/vite-react-tailwind-template",
+    description: "Vite + React + Tailwind CSS starter template",
+  },
+  {
+    name: "vite-react-ts-tailwind",
+    repo: "github:perceptui/vite-react-ts-tailwind-template",
+    description: "Vite + React + TS + Tailwind CSS starter template",
+  },
+  {
+    name: "vite-react-shadcn",
+    repo: "github:perceptui/vite-react-shadcn-template",
+    description: "Vite + React + ShadcnUI starter template",
+  },
+  {
+    name: "next-shadcn",
+    repo: "github:perceptui/next-shadcn-template",
+    description: "Next.js + ShadcnUI starter template",
+  },
+];
+
 export const getTemplate = async (name: string) => {
   try {
-    const response = await fetch(`https://templates-api-otor.onrender.com/template/${name}`);
-
-    if (!response.ok) {
-      const error = await response.json(); // Parse error response
-      console.log(chalk.red((error as any).message || "Failed to fetch the template."));
-      return null; // Return null if the fetch fails
+    const template = templates.find((t) => t.name === name);
+    if (!template) {
+      console.log(chalk.red(`Template '${name}' not found.`));
+      return null;
     }
-
-    const template = await response.json() as Template; // Parse successful response
     return template;
   } catch (error) {
-    if (error instanceof Error) {
-      console.log(chalk.red("An error occurred while fetching the template:"), error.message);
-    } else {
-      console.log(chalk.red("An unknown error occurred while fetching the template."));
-    }
-    return null; // Return null in case of any unexpected errors
+    console.log(chalk.red(`An error occurred while fetching template '${name}':`), error);
+    return null;
   }
 };
 
@@ -41,14 +56,6 @@ export const getTemplate = async (name: string) => {
  */
 export const getTemplates = async () => {
   try {
-    const response = await fetch("https://templates-api-otor.onrender.com/templates");
-
-    if (!response.ok) {
-      console.log(chalk.red("Failed to fetch templates from the registry."));
-      return [];
-    }
-
-    const templates = await response.json() as Template[];
     return templates;
   } catch (error) {
     console.log(chalk.red("An error occurred while fetching templates:"), error);
