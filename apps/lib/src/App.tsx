@@ -24,8 +24,8 @@ function App() {
           Light Mode
         </Button>
       </div>
-      <div className="mt-10">
-        <PasswordInput variant={"ghost"} />
+      <div className="mt-10 w-full">
+        <PasswordInput />
       </div>
     </div>
   );
