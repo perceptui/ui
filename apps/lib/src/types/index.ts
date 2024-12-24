@@ -103,3 +103,18 @@ export type SwitchProps = Omit<ComponentProps<"input">, "size"> & {
   color?: Color;
   size?: Size;
 };
+
+export type passwordInputProps = ComponentProps<"input"> & {
+  className?: string;
+  variant?: "ghost" | "classic" | "standard" | null | undefined;
+  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
+  placeholder?: string;
+};
+
+export type otpInputProps = ComponentProps<"input"> & {
+  className?: string;
+  variant?: "ghost" | "classic" | "standard" | null | undefined;
+  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
+  length?: number;
+  onComplete: (pin: string) => void;
+};

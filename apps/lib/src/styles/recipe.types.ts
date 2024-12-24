@@ -13,6 +13,7 @@ import {
 } from "@/styles";
 import { VariantProps } from "class-variance-authority";
 
+
 export type alertStylesProps = VariantProps<typeof alertStyles>;
 export type avatarStylesProps = VariantProps<typeof avatarStyles>;
 export type badgeStylesProps = VariantProps<typeof badgeStyles>;

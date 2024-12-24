@@ -7,7 +7,7 @@ export const inputStyles = cva(
     "focus:outline-none",
     "px-2 py-1",
     "text-slate-700 focus:border-blue-500 ",
-    "bg-transparent",
+    "bg-transparent dark:text-white",
   ],
   {
     variants: {
