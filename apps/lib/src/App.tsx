@@ -25,7 +25,7 @@ function App() {
         </Button>
       </div>
       <div className="mt-10">
-        <PasswordInput />
+        <PasswordInput variant={"ghost"} />
       </div>
     </div>
   );
