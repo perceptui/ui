@@ -28,7 +28,7 @@ export const passwordInputStyles = cva(
     compoundVariants: [
       {
         variant: "classic",
-        className: `rounded-md border-gray-700 dark:border-white`,
+        className: `border-gray-700 dark:border-white`,
       },
       {
         variant: "standard",

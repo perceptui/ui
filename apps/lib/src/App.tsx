@@ -24,8 +24,8 @@ function App() {
           Light Mode
         </Button>
       </div>
-      <div className="mt-10 w-full">
-        <PasswordInput />
+      <div className="mt-10">
+        <PasswordInput radius={"none"} />
       </div>
     </div>
   );
