@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type SwitchColors = keyof typeof colors;
 
 const colorClasses = {
   blue: "bg-blue-600",
@@ -84,12 +84,12 @@ export const switchButtonVariants = cva(
       color: Object.keys(colors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: colorClasses[key as Colors],
+          [key]: colorClasses[key as SwitchColors],
         }),
-        {} as Record<Colors, string>
+        {} as Record<SwitchColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as Colors[]).flatMap((scheme) => [
+    compoundVariants: (Object.keys(colors) as SwitchColors[]).flatMap((scheme) => [
       {
         color: scheme,
       },

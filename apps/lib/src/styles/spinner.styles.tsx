@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type SpinnerColors = keyof typeof colors;
 
 const colorClasses = {
   blue: " border-blue-600",
@@ -65,12 +65,12 @@ export const spinnerStyles = cva(
       color: Object.keys(colors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: colorClasses[key as Colors],
+          [key]: colorClasses[key as SpinnerColors],
         }),
-        {} as Record<Colors, string>
+        {} as Record<SpinnerColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as Colors[]).flatMap((scheme) => [
+    compoundVariants: (Object.keys(colors) as SpinnerColors[]).flatMap((scheme) => [
       {
         color: scheme,
       },

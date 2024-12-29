@@ -14,7 +14,6 @@ import {
 import { VariantProps } from "class-variance-authority";
 import { passwordInputStyles } from "./password-input.styles";
 
-
 export type alertStylesProps = VariantProps<typeof alertStyles>;
 export type avatarStylesProps = VariantProps<typeof avatarStyles>;
 export type badgeStylesProps = VariantProps<typeof badgeStyles>;

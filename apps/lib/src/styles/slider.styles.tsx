@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type SliderColors = keyof typeof colors;
 
 const colorClasses = {
   blue: "accent-blue-600",
@@ -60,12 +60,12 @@ export const sliderStyles = cva(
       color: Object.keys(colors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: colorClasses[key as Colors],
+          [key]: colorClasses[key as SliderColors],
         }),
-        {} as Record<Colors, string>
+        {} as Record<SliderColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as Colors[]).flatMap((scheme) => [
+    compoundVariants: (Object.keys(colors) as SliderColors[]).flatMap((scheme) => [
       {
         color: scheme,
       },

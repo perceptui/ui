@@ -18,8 +18,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
     "baseUrl": "./",
+    "types": ["vite/client", "react", "react-dom"],
     "paths": {
       "@/*": ["./src/*"]
     }

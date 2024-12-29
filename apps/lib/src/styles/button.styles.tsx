@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type ButtonColors = keyof typeof colors;
 
 const colorClasses = {
   blue: {
@@ -165,10 +165,10 @@ const buttonStyles = cva(
           ...acc,
           [key]: "text-white",
         }),
-        {} as Record<Colors, string>
+        {} as Record<ButtonColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as Colors[]).flatMap((scheme) => [
+    compoundVariants: (Object.keys(colors) as ButtonColors[]).flatMap((scheme) => [
       {
         variant: "solid",
         color: scheme,

@@ -22,9 +22,9 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type RadioColors = keyof typeof colors;
 
-const colorClasses: Record<Colors, string> = {
+const colorClasses: Record<RadioColors, string> = {
   black: "checked:accent-black hover:checked:accent-gray-900",
   dark: "checked:accent-slate-800 hover:checked:accent-gray-700",
   light: "checked:accent-white hover:checked:accent-slate-100",
@@ -65,9 +65,9 @@ export const radioStyles = cva(
       color: Object.keys(colors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: `${colorClasses[key as Colors]}`,
+          [key]: `${colorClasses[key as RadioColors]}`,
         }),
-        {} as Record<Colors, string>
+        {} as Record<RadioColors, string>
       ),
     },
     defaultVariants: {

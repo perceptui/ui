@@ -7,7 +7,7 @@ const types = {
   info: "blue",
 };
 
-type Types = keyof typeof types;
+export type AlertColorTypes = keyof typeof types;
 
 const typeClasses = {
   success: {
@@ -43,7 +43,7 @@ const alertStyles = cva(
         info: "text-blue-700",
       },
     },
-    compoundVariants: (Object.keys(types) as Types[]).flatMap((type) => [
+    compoundVariants: (Object.keys(types) as AlertColorTypes[]).flatMap((type) => [
       {
         variant: "solid",
         type,

@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type CheckBoxColors = keyof typeof colors;
 
 const colorClasses = {
   blue: "checked:accent-blue-600 hover:checked:accent-blue-500",
@@ -67,9 +67,9 @@ export const checkboxStyles = cva(
       color: Object.keys(colors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: colorClasses[key as Colors],
+          [key]: colorClasses[key as CheckBoxColors],
         }),
-        {} as Record<Colors, string>
+        {} as Record<CheckBoxColors, string>
       ),
     },
     defaultVariants: {

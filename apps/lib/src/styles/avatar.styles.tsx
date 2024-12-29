@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-type Colors = keyof typeof colors;
+export type AvatarColors = keyof typeof colors;
 
 const colorClasses = {
   blue: {
@@ -150,10 +150,10 @@ const avatarStyles = cva(
           ...acc,
           [key]: "text-white",
         }),
-        {} as Record<Colors, string>
+        {} as Record<AvatarColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as Colors[]).flatMap((scheme) => [
+    compoundVariants: (Object.keys(colors) as AvatarColors[]).flatMap((scheme) => [
       {
         variant: "solid",
         color: scheme,
