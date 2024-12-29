@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-const colors = {
+const checkboxColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-export type CheckBoxColors = keyof typeof colors;
+export type CheckBoxColors = keyof typeof checkboxColors;
 
 const colorClasses = {
   blue: "checked:accent-blue-600 hover:checked:accent-blue-500",
@@ -64,7 +64,7 @@ export const checkboxStyles = cva(
         lg: "w-6 h-6",
         xl: "w-7 h-7",
       },
-      color: Object.keys(colors).reduce(
+      color: Object.keys(checkboxColors).reduce(
         (acc, key) => ({
           ...acc,
           [key]: colorClasses[key as CheckBoxColors],

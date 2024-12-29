@@ -1,14 +1,9 @@
 import { cn } from "@/utils";
 import { badgeStyles } from "@/styles";
 import { badgeProps } from "@/types";
-import { badgeStylesProps } from "@/styles/recipe.types";
 
-export type badgeProp = badgeProps &
-  badgeStylesProps & {
-    className?: string;
-  };
 
-export const Badge: React.FC<badgeProp> = ({
+export const Badge: React.FC<badgeProps> = ({
   variant,
   color,
   size,

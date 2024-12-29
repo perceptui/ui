@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-const colors = {
+const radioColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-export type RadioColors = keyof typeof colors;
+export type RadioColors = keyof typeof radioColors;
 
 const colorClasses: Record<RadioColors, string> = {
   black: "checked:accent-black hover:checked:accent-gray-900",
@@ -62,7 +62,7 @@ export const radioStyles = cva(
         lg: "w-6 h-6",
         xl: "w-7 h-7",
       },
-      color: Object.keys(colors).reduce(
+      color: Object.keys(radioColors).reduce(
         (acc, key) => ({
           ...acc,
           [key]: `${colorClasses[key as RadioColors]}`,

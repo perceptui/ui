@@ -2,13 +2,10 @@ import { cn } from "@/utils";
 import { forwardRef, useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { passwordInputProps } from "@/types";
-import { passwordInputVariantsProps } from "@/styles";
 import { passwordInputStyles } from "@/styles/password-input.styles";
 
-export type PasswordInput_Props = passwordInputProps &
-  passwordInputVariantsProps;
 
-export const PasswordInput = forwardRef<HTMLInputElement, PasswordInput_Props>(
+export const PasswordInput = forwardRef<HTMLInputElement, passwordInputProps>(
   (
     { className, variant, radius, placeholder = "******", ...props },
     forwardedRef

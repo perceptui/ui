@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-const colors = {
+const buttonColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-export type ButtonColors = keyof typeof colors;
+export type ButtonColors = keyof typeof buttonColors;
 
 const colorClasses = {
   blue: {
@@ -160,7 +160,7 @@ const buttonStyles = cva(
         xl: "rounded-xl",
         full: "rounded-full",
       },
-      color: Object.keys(colors).reduce(
+      color: Object.keys(buttonColors).reduce(
         (acc, key) => ({
           ...acc,
           [key]: "text-white",
@@ -168,7 +168,7 @@ const buttonStyles = cva(
         {} as Record<ButtonColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as ButtonColors[]).flatMap((scheme) => [
+    compoundVariants: (Object.keys(buttonColors) as ButtonColors[]).flatMap((scheme) => [
       {
         variant: "solid",
         color: scheme,

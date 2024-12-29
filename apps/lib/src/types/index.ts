@@ -1,82 +1,160 @@
+import { alertStyles, avatarStyles, badgeStyles, buttonStyles, checkboxStyles, inputStyles, radioStyles, sliderStyles, spinnerStyles, switchButtonVariants, switchStyles } from "@/styles";
+import { aspectRatioStyles } from "@/styles/aspect-ratio.styles";
+import { flexVariants } from "@/styles/flex.styles";
+import { passwordInputStyles } from "@/styles/password-input.styles";
+import { VariantProps } from "class-variance-authority";
 import React, { ComponentProps } from "react";
 
-export type Size = NonNullable<{
-  size?: "sm" | "md" | "lg" | "xl" | null | undefined;
-}["size"]>;
+/***
+ * This file is used to export all the types from the styles folder
+ * This is done to avoid circular dependencies
+ */
 
-export type Color = NonNullable<
-  {
-    size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-    color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-  }["color"]
->;
+// ------------------------------------------------ //
 
-export type alertProps = {
-  variant?: "solid" | "outline" | null | undefined;
-  type?: "success" | "error" | "warning" | "info" | null | undefined;
-} &
+
+/***
+ * Alert Props
+ * @param message: string
+ * @param icon: React.ReactNode
+ * @param className: string
+ * @param children: React.ReactNode
+ * @param variant: string
+ * @param type: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+ */
+export type alertProps = VariantProps<typeof alertStyles> &
   ComponentProps<"div"> & {
-    type?: "success" | "warning" | "error" | "info";
     message?: String;
     icon?: React.ReactNode;
     className?: string;
     children?: React.ReactNode;
   };
 
-export type avatarProps = ComponentProps<"div"> & {
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | "dark" | "light" | null | undefined;
-  variant?: "solid" | "outline" | "soft" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
-};
+// ------------------------------------------------ //
 
-export type avatarImageProps = ComponentProps<"img"> & {
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | "dark" | "light" | null | undefined;
-  variant?: "solid" | "outline" | "soft" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
-} & {
+/***
+ * Avatar Props
+ * @param className: string
+ * @param children: React.ReactNode
+ * @param src: string
+ * @param fallback: string
+ * @param variant: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+  */
+export type avatarProps = VariantProps<typeof avatarStyles> & ComponentProps<"div">
+
+// ------------------------------------------------ //
+/***
+ * Avatar Image Props
+ * @param src: string
+ * @param variant: string
+ * @param forwardedRef: React.Ref<HTMLImageElement>
+ * @param className: string
+ * @param children: React.ReactNode
+ * @param fallback: string
+ * @param alt: string
+ * @param forwardedRef: React.Ref<HTMLImageElement>
+ */
+export type avatarImageProps = VariantProps<typeof avatarStyles> & ComponentProps<"img"> & {
   src?: string;
 };
 
-export type avatarFallbackProps = ComponentProps<"div"> & {
+// ------------------------------------------------ //
+/***
+ * Avatar Fallback Props
+ * @param src: string
+ * @param variant: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+ * @param className: string
+ * @param children: React.ReactNode
+ * @param fallback: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+ * @param alt: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+ */
+export type avatarFallbackProps = VariantProps<typeof avatarStyles> & ComponentProps<"div"> & {
   src?: string;
 };
 
-export type badgeProps = {
-  size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-  variant?: "solid" | "outline" | "soft" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | null | undefined;
+// ------------------------------------------------ //
+/***
+ * Badge Props
+ * @param children: React.ReactNode
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+ * @param variant: string
+ */
+export type badgeProps = VariantProps<typeof badgeStyles> & {
   children: React.ReactNode;
+  className?: string;
 };
 
-export type ButtonProps = ComponentProps<"button"> & {
-  size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "light" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-  variant?: "solid" | "outline" | "ghost" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | null | undefined;
-};
+// ------------------------------------------------ //
+/***
+ * Button Props
+ * @param children: React.ReactNode
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLButtonElement>
+ * @param variant: string
+ */
+export type ButtonProps = VariantProps<typeof buttonStyles> & ComponentProps<"button">
 
-export type CheckboxProps = ComponentProps<"input"> & {
-  size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-};
+// ------------------------------------------------ //
+/***
+ * Checkbox Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLInputElement>
+ * @param variant: string
+ */
+export type CheckboxProps = VariantProps<typeof checkboxStyles> & ComponentProps<"input">
 
-export type InputProps = ComponentProps<"input"> & {
-  variant?: "ghost" | "classic" | "standard" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
-}
+// ------------------------------------------------ //
+/***
+ * Input Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLInputElement>
+ * @param variant: string
+ */
+export type InputProps = VariantProps<typeof inputStyles> & ComponentProps<"input">
 
+// ------------------------------------------------ //
+/***
+ * Label Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLLabelElement>
+ * @param variant: string
+ */
 export type LabelProps = ComponentProps<"label">;
 
+// ------------------------------------------------ //
+/***
+ * Link Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLAnchorElement>
+ * @param variant: string
+ */
 export type AnchorProps = ComponentProps<"a">;
 
-export type RadioProps = ComponentProps<"input"> & {
-  size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-} & {
+// ------------------------------------------------ //
+/***
+ * Radio Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLInputElement>
+ * @param variant: string
+ */
+export type RadioProps = VariantProps<typeof radioStyles> & ComponentProps<"input"> & {
   label?: string;
 };
 
+// ------------------------------------------------ //
+/***
+ * Radio Group Props
+ * @param children: React.ReactNode
+ * @param defaultValue: string
+ * @param onChange: (value: string) => void
+ * @param name: string
+ */
 export type RadioGroupProps = {
   children: React.ReactNode;
   defaultValue?: string;
@@ -84,37 +162,76 @@ export type RadioGroupProps = {
   name?: string;
 };
 
-export type SliderProps = ComponentProps<"input"> & {
-  size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-}
+// ------------------------------------------------ //
+/***
+ * Slider Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLInputElement>
+ * @param variant: string
+ */
+export type SliderProps = VariantProps<typeof sliderStyles> & ComponentProps<"input">
 
-export type SpinnerProps = ComponentProps<"div"> & {
-  size?: "sm" | "md" | "lg" | "xl" | "xs" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-}
+// ------------------------------------------------ //
+/***
+ * Spinner Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLDivElement>
+ * @param variant: string
+ */
+export type SpinnerProps = VariantProps<typeof spinnerStyles> & ComponentProps<"div">
 
-export type SwitchProps = Omit<ComponentProps<"input">, "size"> & {
-  size?: "sm" | "md" | "lg" | "xl" | null | undefined;
-} & {
-  size?: "sm" | "md" | "lg" | "xl" | null | undefined;
-  color?: "black" | "blue" | "red" | "green" | "yellow" | "cyan" | "gray" | "emerald" | "rose" | "amber" | "orange" | "pink" | "purple" | "indigo" | "teal" | "lime" | "sky" | null | undefined;
-} & {
-  color?: Color;
-  size?: Size;
-};
-
-export type passwordInputProps = ComponentProps<"input"> & {
+// ------------------------------------------------ //
+/***
+ * Switch Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLInputElement>
+ * @param variant: string
+ */
+export type SwitchProps = VariantProps<typeof switchStyles> & VariantProps<typeof switchButtonVariants> & {
   className?: string;
-  variant?: "ghost" | "classic" | "standard" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
+  id?: string;
+}
+
+// ------------------------------------------------ //
+/***
+ * Password Input Props
+ * @param className: string
+ * @param forwardedRef: React.Ref<HTMLInputElement>
+ * @param variant: string
+ */
+export type passwordInputProps = VariantProps<typeof passwordInputStyles> & ComponentProps<"input"> & {
+  className?: string;
   placeholder?: string;
 };
 
-export type otpInputProps = ComponentProps<"input"> & {
+
+
+
+// ------------------------------------------------ //
+/***
+ * Aspect Ratio Layout Props
+ * @param children: React.ReactNode
+ * @param className: string
+ * @param ratio: string
+ */
+export type AspectRatioProps = VariantProps<typeof aspectRatioStyles> & {
+  children: React.ReactNode;
   className?: string;
-  variant?: "ghost" | "classic" | "standard" | null | undefined;
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | "none" | null | undefined;
-  length?: number;
-  onComplete: (pin: string) => void;
+};
+
+// ------------------------------------------------ //
+/***
+ * Flex Layout Props
+ * @param children: React.ReactNode
+ * @param className: string
+ * @param gap: string
+ * @param align: string
+ * @param direction: string
+ * @param justify: string
+ * @param wrap: string
+
+ */
+export type FlexProps = VariantProps<typeof flexVariants> & {
+  children: React.ReactNode;
+  className?: string;
 };

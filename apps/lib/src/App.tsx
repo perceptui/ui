@@ -1,4 +1,5 @@
-import { Button, PasswordInput } from "./main";
+import { Alert, Button } from "./main";
+import { Flex } from "./layouts/flex";
 
 function App() {
   const changeTheme = (mode: string) => {
@@ -25,7 +26,12 @@ function App() {
         </Button>
       </div>
       <div className="mt-10">
-        <PasswordInput radius={"none"} />
+        <Flex gap={0}>
+          <Alert type="success" variant="solid" message="Success Alert" />
+          <Alert type="error" variant="solid" message="Error Alert" />
+          <Alert type="warning" variant="solid" message="Warning Alert" />
+          <Alert type="info" variant="solid" message="Info Alert" />
+        </Flex>
       </div>
     </div>
   );

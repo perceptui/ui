@@ -2,13 +2,8 @@ import { cn } from "@/utils";
 import { avatarStyles } from "@/styles";
 import { forwardRef } from "react";
 import { avatarFallbackProps, avatarImageProps, avatarProps } from "@/types";
-import { avatarStylesProps } from "@/styles/recipe.types";
 
-export type avatarProp = avatarProps & avatarStylesProps;
-export type avatarImageProp = avatarImageProps & avatarStylesProps;
-export type avatarFallbackProp = avatarFallbackProps & avatarStylesProps;
-
-export const Avatar = forwardRef<HTMLDivElement, avatarProp>(
+export const Avatar = forwardRef<HTMLDivElement, avatarProps>(
   ({ variant, color, radius, className, children, ...props }, forwardedRef) => (
     <div
       {...props}
@@ -24,7 +19,7 @@ export const Avatar = forwardRef<HTMLDivElement, avatarProp>(
   )
 );
 
-export const AvatarImage = forwardRef<HTMLImageElement, avatarImageProp>(
+export const AvatarImage = forwardRef<HTMLImageElement, avatarImageProps>(
   ({ src, className, ...props }, forwardedRef) => {
     if (src) {
       return (
@@ -40,7 +35,7 @@ export const AvatarImage = forwardRef<HTMLImageElement, avatarImageProp>(
   }
 );
 
-export const AvatarFallback = forwardRef<HTMLDivElement, avatarFallbackProp>(
+export const AvatarFallback = forwardRef<HTMLDivElement, avatarFallbackProps>(
   ({ children, className, ...props }, forwardedRef) => {
     return (
       <div {...props} className={cn(className)} ref={forwardedRef}>

@@ -1,15 +1,10 @@
 import { sliderStyles } from "@/styles";
-import { sliderStylesProps } from "@/styles/recipe.types";
 import { SliderProps } from "@/types";
 import { cn } from "@/utils";
 import { forwardRef } from "react";
 
-export type SliderProp = SliderProps &
-  sliderStylesProps & {
-    className?: string;
-  };
 
-export const Slider = forwardRef<HTMLInputElement, SliderProp>(
+export const Slider = forwardRef<HTMLInputElement, SliderProps>(
   ({ className, color, size, ...props }, forwardedRef) => (
     <input
       type="range"

@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-const colors = {
+const switchColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -22,7 +22,7 @@ const colors = {
   sky: "sky",
 };
 
-export type SwitchColors = keyof typeof colors;
+export type SwitchColors = keyof typeof switchColors;
 
 const colorClasses = {
   blue: "bg-blue-600",
@@ -71,7 +71,8 @@ export const switchButtonVariants = cva(
     "focus:outline-none",
     "transition-colors duration-300",
     "absolute top-0 left-0 rounded-full shadow-md transition-transform duration-300 peer-checked:border-slate-800 cursor-pointer dark",
-    "dark:shadow-slate-400 shadow-slate-600","border-t-2 border-t-white peer-checked:border-t-slate-200",
+    "dark:shadow-slate-400 shadow-slate-600",
+    "border-t-2 border-t-white peer-checked:border-t-slate-200",
   ],
   {
     variants: {
@@ -81,7 +82,7 @@ export const switchButtonVariants = cva(
         lg: "w-8 h-8 peer-checked:translate-x-9",
         xl: "w-11 h-11 peer-checked:translate-x-16",
       },
-      color: Object.keys(colors).reduce(
+      color: Object.keys(switchColors).reduce(
         (acc, key) => ({
           ...acc,
           [key]: colorClasses[key as SwitchColors],
@@ -89,11 +90,13 @@ export const switchButtonVariants = cva(
         {} as Record<SwitchColors, string>
       ),
     },
-    compoundVariants: (Object.keys(colors) as SwitchColors[]).flatMap((scheme) => [
-      {
-        color: scheme,
-      },
-    ]),
+    compoundVariants: (Object.keys(switchColors) as SwitchColors[]).flatMap(
+      (scheme) => [
+        {
+          color: scheme,
+        },
+      ]
+    ),
     defaultVariants: {
       size: "md",
       color: "blue",
