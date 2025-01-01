@@ -82,10 +82,10 @@ const getComponent = async ({
         let content: string;
         switch (projectType) {
             case ProjectType.REACT:
-                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/lib/src/components//${componentName}.txt`;
+                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/lib/src/components/${componentName}.txt`;
                 break;
             case ProjectType.NEXT_JS:
-                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/lib/src/components//${componentName}.txt`;
+                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/lib/src/components/${componentName}.txt`;
                 break;
             default:
                 throw new Error("Unsupported project type");
