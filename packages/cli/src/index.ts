@@ -7,6 +7,8 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { readFileSync } from "fs";
 import { createProject } from "./commands/create.js";
+import ora from "ora";
+import { add } from "./commands/add.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,11 +44,11 @@ program
 
 program
   .command("add")
-  .description("Add a new template")
-  .option("-n, --name <name>", "Template name")
-  .option("-r, --repo <repo>", "GitHub repository URL")
-  .option("-d, --description <description>", "Template description").action(() => {
-    console.log(chalk.yellow("This feature is under development."));
+  .description("Add a new component")
+  .argument("[component...]", "the components to add")
+  .action(async (components: string[]) => {
+    ora("Detecting project type...").start();
+    await add(components);
   });
 
 program.parse(process.argv);
