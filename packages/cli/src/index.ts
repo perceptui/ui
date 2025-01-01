@@ -23,7 +23,7 @@ program
   .name("percept-cli")
   .description(
     chalk.magenta(
-      "CLI tool for initializing projects with predefined templates"
+      "Percept UI CLI to initialize new projects with Percept UI templates or add components to your existing projects."
     )
   )
   .version(packageJson.version);
@@ -42,11 +42,9 @@ program
 
 program
   .command("add")
-  .description("Add a new template")
-  .option("-n, --name <name>", "Template name")
-  .option("-r, --repo <repo>", "GitHub repository URL")
-  .option("-d, --description <description>", "Template description").action(() => {
-    console.log(chalk.yellow("This feature is under development."));
+  .description("Add a new component to your project")
+  .action(() => {
+    console.log("Add command executed");
   });
 
 program.parse(process.argv);
