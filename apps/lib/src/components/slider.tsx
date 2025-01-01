@@ -1,5 +1,5 @@
 import { SliderProps } from "@/types";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 import { cva } from "class-variance-authority";
 

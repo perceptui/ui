@@ -47,7 +47,6 @@ program
   .description("Add a new component")
   .argument("[component...]", "the components to add")
   .action(async (components: string[]) => {
-    ora("Detecting project type...").start();
     await add(components);
   });
 

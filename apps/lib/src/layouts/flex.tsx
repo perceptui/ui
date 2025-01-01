@@ -1,5 +1,5 @@
 import { FlexProps } from "@/types";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import React from "react";
 import { cva } from "class-variance-authority";
 

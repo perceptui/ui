@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef } from "react";
 
 export type LabelProps = ComponentProps<"label">;

@@ -172,6 +172,7 @@ const addComponent = async (componentName: string) => {
 }
 
 export const add = async (components: string[]) => {
+    ora("Detecting project type...").start();
     const componentsList = ["alert", "avatar", "badge", "button", "checkbox", "input", "label", "link", "password-input", "radio", "slider", "spinner", "switch"];
     const spinner = ora('Creating component...').start();
     if (components.length === 0) {
@@ -181,8 +182,10 @@ export const add = async (components: string[]) => {
     for (let component of components) {
         if (componentsList.includes(component)) {
             await addComponent(component);
+            return;
         } else {
             spinner.fail(chalk.red(`Component ${component} not found`));
+            return;
         }
     }
 }

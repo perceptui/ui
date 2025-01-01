@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
 export const badgeColors = {

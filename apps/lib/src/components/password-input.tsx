@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef, useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { VariantProps } from "class-variance-authority";
