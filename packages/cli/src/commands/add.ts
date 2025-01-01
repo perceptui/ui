@@ -121,6 +121,7 @@ const createComponent = (
     const filePath = path.join(uiFolderPath, `${componentName}.tsx`);
     writeToFile(filePath, data, `${componentName}.tsx`);
     console.log(chalk.green(`✔ Created the component`));
+    return;
 };
 
 // Main function to handle the logic based on project type
@@ -165,9 +166,11 @@ const addComponent = async (componentName: string) => {
             }
         } else {
             console.log(chalk.red("❌ Project type not detected."));
+            return;
         }
     } catch (err: any) {
         console.log(chalk.red(`❌ ${err.message}`));
+        return;
     }
 }
 
