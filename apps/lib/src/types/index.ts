@@ -1,7 +1,16 @@
-import { alertStyles, avatarStyles, badgeStyles, buttonStyles, checkboxStyles, inputStyles, radioStyles, sliderStyles, spinnerStyles, switchButtonVariants, switchStyles } from "@/styles";
-import { aspectRatioStyles } from "@/styles/aspect-ratio.styles";
-import { flexVariants } from "@/styles/flex.styles";
-import { passwordInputStyles } from "@/styles/password-input.styles";
+import { alertVariants } from "@/components/alert";
+import { avatarVariants } from "@/components/avatar";
+import { badgeVariants } from "@/components/badge";
+import { buttonVariants } from "@/components/button";
+import { checkboxVariants } from "@/components/checkbox";
+import { inputVariants } from "@/components/input";
+import { passwordInputVariants } from "@/components/password-input";
+import { radioVariants } from "@/components/radio";
+import { sliderVariants } from "@/components/slider";
+import { spinnerVariants } from "@/components/spinner";
+import { switchButtonVariants, switchVariants } from "@/components/switch";
+import { aspectRatioVariants } from "@/layouts/aspect-ratio";
+import { flexVariants } from "@/layouts/flex";
 import { VariantProps } from "class-variance-authority";
 import React, { ComponentProps } from "react";
 
@@ -23,7 +32,7 @@ import React, { ComponentProps } from "react";
  * @param type: string
  * @param forwardedRef: React.Ref<HTMLDivElement>
  */
-export type alertProps = VariantProps<typeof alertStyles> &
+export type alertProps = VariantProps<typeof alertVariants> &
   ComponentProps<"div"> & {
     message?: String;
     icon?: React.ReactNode;
@@ -42,7 +51,7 @@ export type alertProps = VariantProps<typeof alertStyles> &
  * @param variant: string
  * @param forwardedRef: React.Ref<HTMLDivElement>
   */
-export type avatarProps = VariantProps<typeof avatarStyles> & ComponentProps<"div">
+export type avatarProps = VariantProps<typeof avatarVariants> & ComponentProps<"div">
 
 // ------------------------------------------------ //
 /***
@@ -56,7 +65,7 @@ export type avatarProps = VariantProps<typeof avatarStyles> & ComponentProps<"di
  * @param alt: string
  * @param forwardedRef: React.Ref<HTMLImageElement>
  */
-export type avatarImageProps = VariantProps<typeof avatarStyles> & ComponentProps<"img"> & {
+export type avatarImageProps = VariantProps<typeof avatarVariants> & ComponentProps<"img"> & {
   src?: string;
 };
 
@@ -73,7 +82,7 @@ export type avatarImageProps = VariantProps<typeof avatarStyles> & ComponentProp
  * @param alt: string
  * @param forwardedRef: React.Ref<HTMLDivElement>
  */
-export type avatarFallbackProps = VariantProps<typeof avatarStyles> & ComponentProps<"div"> & {
+export type avatarFallbackProps = VariantProps<typeof avatarVariants> & ComponentProps<"div"> & {
   src?: string;
 };
 
@@ -85,7 +94,7 @@ export type avatarFallbackProps = VariantProps<typeof avatarStyles> & ComponentP
  * @param forwardedRef: React.Ref<HTMLDivElement>
  * @param variant: string
  */
-export type badgeProps = VariantProps<typeof badgeStyles> & {
+export type badgeProps = VariantProps<typeof badgeVariants> & {
   children: React.ReactNode;
   className?: string;
 };
@@ -98,7 +107,7 @@ export type badgeProps = VariantProps<typeof badgeStyles> & {
  * @param forwardedRef: React.Ref<HTMLButtonElement>
  * @param variant: string
  */
-export type ButtonProps = VariantProps<typeof buttonStyles> & ComponentProps<"button">
+export type ButtonProps = VariantProps<typeof buttonVariants> & ComponentProps<"button">
 
 // ------------------------------------------------ //
 /***
@@ -107,7 +116,7 @@ export type ButtonProps = VariantProps<typeof buttonStyles> & ComponentProps<"bu
  * @param forwardedRef: React.Ref<HTMLInputElement>
  * @param variant: string
  */
-export type CheckboxProps = VariantProps<typeof checkboxStyles> & ComponentProps<"input">
+export type CheckboxProps = VariantProps<typeof checkboxVariants> & ComponentProps<"input">
 
 // ------------------------------------------------ //
 /***
@@ -116,7 +125,7 @@ export type CheckboxProps = VariantProps<typeof checkboxStyles> & ComponentProps
  * @param forwardedRef: React.Ref<HTMLInputElement>
  * @param variant: string
  */
-export type InputProps = VariantProps<typeof inputStyles> & ComponentProps<"input">
+export type InputProps = VariantProps<typeof inputVariants> & ComponentProps<"input">
 
 // ------------------------------------------------ //
 /***
@@ -143,7 +152,7 @@ export type AnchorProps = ComponentProps<"a">;
  * @param forwardedRef: React.Ref<HTMLInputElement>
  * @param variant: string
  */
-export type RadioProps = VariantProps<typeof radioStyles> & ComponentProps<"input"> & {
+export type RadioProps = VariantProps<typeof radioVariants> & ComponentProps<"input"> & {
   label?: string;
 };
 
@@ -169,7 +178,7 @@ export type RadioGroupProps = {
  * @param forwardedRef: React.Ref<HTMLInputElement>
  * @param variant: string
  */
-export type SliderProps = VariantProps<typeof sliderStyles> & ComponentProps<"input">
+export type SliderProps = VariantProps<typeof sliderVariants> & ComponentProps<"input">
 
 // ------------------------------------------------ //
 /***
@@ -178,7 +187,7 @@ export type SliderProps = VariantProps<typeof sliderStyles> & ComponentProps<"in
  * @param forwardedRef: React.Ref<HTMLDivElement>
  * @param variant: string
  */
-export type SpinnerProps = VariantProps<typeof spinnerStyles> & ComponentProps<"div">
+export type SpinnerProps = VariantProps<typeof spinnerVariants> & ComponentProps<"div">
 
 // ------------------------------------------------ //
 /***
@@ -187,7 +196,7 @@ export type SpinnerProps = VariantProps<typeof spinnerStyles> & ComponentProps<"
  * @param forwardedRef: React.Ref<HTMLInputElement>
  * @param variant: string
  */
-export type SwitchProps = VariantProps<typeof switchStyles> & VariantProps<typeof switchButtonVariants> & {
+export type SwitchProps = VariantProps<typeof switchVariants> & VariantProps<typeof switchButtonVariants> & {
   className?: string;
   id?: string;
 }
@@ -199,7 +208,7 @@ export type SwitchProps = VariantProps<typeof switchStyles> & VariantProps<typeo
  * @param forwardedRef: React.Ref<HTMLInputElement>
  * @param variant: string
  */
-export type passwordInputProps = VariantProps<typeof passwordInputStyles> & ComponentProps<"input"> & {
+export type passwordInputProps = VariantProps<typeof passwordInputVariants> & ComponentProps<"input"> & {
   className?: string;
   placeholder?: string;
 };
@@ -214,7 +223,7 @@ export type passwordInputProps = VariantProps<typeof passwordInputStyles> & Comp
  * @param className: string
  * @param ratio: string
  */
-export type AspectRatioProps = VariantProps<typeof aspectRatioStyles> & {
+export type AspectRatioProps = VariantProps<typeof aspectRatioVariants> & {
   children: React.ReactNode;
   className?: string;
 };

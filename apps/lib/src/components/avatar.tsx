@@ -1,6 +1,8 @@
-import { cva } from "class-variance-authority";
+import { cn } from "@/utils";
+import { ComponentProps, forwardRef } from "react";
+import { cva, VariantProps } from "class-variance-authority";
 
-const avatarColors = {
+export const avatarColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -24,7 +26,7 @@ const avatarColors = {
 
 export type AvatarColors = keyof typeof avatarColors;
 
-const colorClasses = {
+export const colorClasses = {
   blue: {
     solid: "bg-blue-600 hover:bg-blue-500",
     outline: "text-blue-600 border-blue-500",
@@ -122,7 +124,7 @@ const colorClasses = {
   },
 };
 
-const avatarStyles = cva(
+export const avatarVariants = cva(
   [
     "w-10 h-10 flex justify-center items-center",
     "rounded-md overflow-hidden",
@@ -178,4 +180,58 @@ const avatarStyles = cva(
   }
 );
 
-export { avatarStyles };
+export type avatarProps = VariantProps<typeof avatarVariants> & ComponentProps<"div">
+
+export type avatarImageProps = VariantProps<typeof avatarVariants> & ComponentProps<"img"> & {
+  src?: string;
+};
+
+export type avatarFallbackProps = VariantProps<typeof avatarVariants> & ComponentProps<"div"> & {
+  src?: string;
+};
+
+export const Avatar = forwardRef<HTMLDivElement, avatarProps>(
+  ({ variant, color, radius, className, children, ...props }, forwardedRef) => (
+    <div
+      {...props}
+      className={cn(
+        "flex items-center justify-center relative",
+        className,
+        avatarVariants({ variant, color, radius })
+      )}
+      ref={forwardedRef}
+    >
+      {children}
+    </div>
+  )
+);
+
+export const AvatarImage = forwardRef<HTMLImageElement, avatarImageProps>(
+  ({ src, className, ...props }, forwardedRef) => {
+    if (src) {
+      return (
+        <img
+          {...props}
+          className={cn("absolute inset-0", className)}
+          src={`${src}`}
+          ref={forwardedRef}
+        />
+      );
+    }
+    return null;
+  }
+);
+
+export const AvatarFallback = forwardRef<HTMLDivElement, avatarFallbackProps>(
+  ({ children, className, ...props }, forwardedRef) => {
+    return (
+      <div {...props} className={cn(className)} ref={forwardedRef}>
+        {children}
+      </div>
+    );
+  }
+);
+
+Avatar.displayName = "Avatar";
+AvatarImage.displayName = "AvatarImage";
+AvatarFallback.displayName = "AvatarFallback";

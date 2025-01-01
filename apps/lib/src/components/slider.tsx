@@ -1,6 +1,9 @@
+import { SliderProps } from "@/types";
+import { cn } from "@/utils";
+import { forwardRef } from "react";
 import { cva } from "class-variance-authority";
 
-const sliderColors = {
+export const sliderColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -24,7 +27,7 @@ const sliderColors = {
 
 export type SliderColors = keyof typeof sliderColors;
 
-const colorClasses = {
+export const colorClasses = {
   blue: "accent-blue-600",
   red: "accent-red-600",
   green: "accent-green-600",
@@ -46,7 +49,7 @@ const colorClasses = {
   light: "accent-slate-900 dark:accent-white",
 };
 
-export const sliderStyles = cva(
+export const sliderVariants = cva(
   ["w-96", "focus:outline-none", "transition-colors duration-300"],
   {
     variants: {
@@ -76,3 +79,17 @@ export const sliderStyles = cva(
     },
   }
 );
+
+
+export const Slider = forwardRef<HTMLInputElement, SliderProps>(
+  ({ className, color, size, ...props }, forwardedRef) => (
+    <input
+      type="range"
+      {...props}
+      ref={forwardedRef}
+      className={cn(className, sliderVariants({ size, className, color }))}
+    />
+  )
+);
+
+Slider.displayName = "Slider";

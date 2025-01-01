@@ -1,6 +1,9 @@
-import { cva } from "class-variance-authority";
+import { cn } from "@/utils";
+import { forwardRef } from "react";
 
-const switchColors = {
+import { cva, VariantProps } from "class-variance-authority";
+
+export const switchColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -24,7 +27,7 @@ const switchColors = {
 
 export type SwitchColors = keyof typeof switchColors;
 
-const colorClasses = {
+export const colorClasses = {
   blue: "bg-blue-600",
   red: "bg-red-600",
   green: "bg-green-600",
@@ -46,7 +49,7 @@ const colorClasses = {
   light: "bg-slate-900 dark:bg-white",
 };
 
-export const switchStyles = cva(
+export const switchVariants = cva(
   [
     "focus:outline-none",
     "peer appearance-none bg-slate-100 shadow-inner shadow-slate-600 rounded-full cursor-pointer transition-colors duration-300 border dark:bg-black dark:shadow-slate-400 dark:border-slate-950",
@@ -103,3 +106,38 @@ export const switchButtonVariants = cva(
     },
   }
 );
+
+export type SwitchProps = VariantProps<typeof switchVariants> &
+  VariantProps<typeof switchButtonVariants> & {
+    className?: string;
+    id?: string;
+  };
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
+  ({ className, color, size, ...props }, ref) => (
+    <div className="relative inline-block">
+      <input
+        {...props}
+        ref={ref}
+        id={props.id || "switch-component"}
+        type="checkbox"
+        className={cn(
+          switchVariants({
+            size,
+          }),
+          className
+        )}
+      />
+      <label
+        htmlFor={props.id || "switch-component"}
+        className={cn(
+          switchButtonVariants({
+            color,
+            size,
+          })
+        )}
+      ></label>
+    </div>
+  )
+);
+
+Switch.displayName = "Switch";

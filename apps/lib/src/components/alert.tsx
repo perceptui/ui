@@ -1,6 +1,14 @@
-import { cva } from "class-variance-authority";
+import { cn } from "@/utils";
+import {
+  IoCheckmarkDoneCircle,
+  IoInformationCircleOutline,
+} from "react-icons/io5";
+import { PiSealWarning } from "react-icons/pi";
+import { BiError } from "react-icons/bi";
+import { ComponentProps, forwardRef } from "react";
+import { cva, VariantProps } from "class-variance-authority";
 
-const alertTypes = {
+export const alertTypes = {
   success: "green",
   error: "red",
   warning: "yellow",
@@ -9,7 +17,7 @@ const alertTypes = {
 
 export type AlertColorTypes = keyof typeof alertTypes;
 
-const AlertTypeClasses = {
+export const AlertTypeClasses = {
   success: {
     solid: "bg-green-800 text-white",
     outline:
@@ -40,7 +48,7 @@ const AlertTypeClasses = {
   },
 };
 
-const alertStyles = cva(
+export const alertVariants = cva(
   ["p-2 rounded border flex justify-start gap-2 items-center w-full"],
   {
     variants: {
@@ -82,4 +90,36 @@ const alertStyles = cva(
   }
 );
 
-export { alertStyles };
+export type alertProps = VariantProps<typeof alertVariants> &
+  ComponentProps<"div"> & {
+    message?: String;
+    icon?: React.ReactNode;
+    className?: string;
+    children?: React.ReactNode;
+  };
+
+export const Alert = forwardRef<HTMLDivElement, alertProps>(
+  ({ variant, type, message, icon, className, children }, forwardedRef) => (
+    <div
+      ref={forwardedRef}
+      className={cn("w-full", className, alertVariants({ variant, type }))}
+    >
+      <span className="text-xl font-bold">
+        {icon ? (
+          icon
+        ) : type === "success" ? (
+          <IoCheckmarkDoneCircle />
+        ) : type === "warning" ? (
+          <PiSealWarning />
+        ) : type === "error" ? (
+          <BiError />
+        ) : (
+          <IoInformationCircleOutline />
+        )}
+      </span>
+      <p>{message || children}</p>
+    </div>
+  )
+);
+
+Alert.displayName = "Alert";

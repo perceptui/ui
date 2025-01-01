@@ -1,6 +1,7 @@
-import { AnchorProps } from "@/types";
 import { cn } from "@/utils";
-import { forwardRef } from "react";
+import { ComponentProps, forwardRef } from "react";
+
+export type AnchorProps = ComponentProps<"a">;
 
 export const Link = forwardRef<HTMLAnchorElement, AnchorProps>(
   ({ className, children, href, ...props }, forwardedRef) => (

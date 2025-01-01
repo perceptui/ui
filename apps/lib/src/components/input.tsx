@@ -1,6 +1,8 @@
-import { cva } from "class-variance-authority";
+import { cn } from "@/utils";
+import { ComponentProps, forwardRef } from "react";
+import { cva, VariantProps } from "class-variance-authority";
 
-export const inputStyles = cva(
+export const inputVariants = cva(
   [
     "w-96",
     "font-semibold",
@@ -45,3 +47,20 @@ export const inputStyles = cva(
     },
   }
 );
+
+export type InputProps = VariantProps<typeof inputVariants> & ComponentProps<"input">
+
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ variant, className, radius, ...props }, forwardedRef) => (
+    <input
+      {...props}
+      ref={forwardedRef}
+      className={cn(
+        className,
+        inputVariants({ variant, className, radius, ...props })
+      )}
+    />
+  )
+);
+
+Input.displayName = "Input";

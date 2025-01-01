@@ -1,6 +1,11 @@
+import { cn } from "@/utils";
+import { ComponentProps, forwardRef } from "react";
+
+import { VariantProps } from "class-variance-authority";
+
 import { cva } from "class-variance-authority";
 
-const buttonColors = {
+export const buttonColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -24,7 +29,7 @@ const buttonColors = {
 
 export type ButtonColors = keyof typeof buttonColors;
 
-const colorClasses = {
+export const colorClasses = {
   blue: {
     solid: "bg-blue-600 hover:bg-blue-500",
     outline: "text-blue-600 border-blue-500 bg-transparent hover:bg-blue-100",
@@ -131,7 +136,7 @@ const colorClasses = {
   },
 };
 
-const buttonStyles = cva(
+export const buttonVariants = cva(
   [
     "rounded-md",
     "font-semibold",
@@ -194,4 +199,16 @@ const buttonStyles = cva(
   }
 );
 
-export { buttonStyles };
+export type ButtonProps = VariantProps<typeof buttonVariants> & ComponentProps<"button">
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant, size, radius, color, className, ...props }, forwardedRef) => (
+    <button
+      {...props}
+      ref={forwardedRef}
+      className={cn(buttonVariants({ variant, size, radius, color, className }))}
+    />
+  )
+);
+
+Button.displayName = "Button";

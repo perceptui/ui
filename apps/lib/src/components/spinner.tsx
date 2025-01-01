@@ -1,6 +1,10 @@
-import { cva } from "class-variance-authority";
 
-const spinnerColors = {
+import { cn } from "@/utils";
+import { ComponentProps, forwardRef } from "react";
+
+import { cva, VariantProps } from "class-variance-authority";
+
+export const spinnerColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -24,7 +28,7 @@ const spinnerColors = {
 
 export type SpinnerColors = keyof typeof spinnerColors;
 
-const colorClasses = {
+export const colorClasses = {
   blue: " border-blue-600",
   red: " border-red-600",
   green: " border-green-600",
@@ -46,7 +50,7 @@ const colorClasses = {
   light: " border-slate-900 dark:border-white",
 };
 
-export const spinnerStyles = cva(
+export const spinnerVariants = cva(
   [
     "transition-colors duration-300",
     "inline-block",
@@ -81,3 +85,17 @@ export const spinnerStyles = cva(
     },
   }
 );
+
+export type SpinnerProps = VariantProps<typeof spinnerVariants> & ComponentProps<"div">
+
+export const Spinner = forwardRef<HTMLInputElement, SpinnerProps>(
+  ({ className, color, size, ...props }, forwardedRef) => (
+    <div
+      {...props}
+      ref={forwardedRef}
+      className={cn(className, spinnerVariants({ size, className, color }))}
+    />
+  )
+);
+
+Spinner.displayName = "Spinner";
