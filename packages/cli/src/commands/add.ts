@@ -175,20 +175,40 @@ const addComponent = async (componentName: string) => {
 }
 
 export const add = async (components: string[]) => {
-    ora("Detecting project type...").start();
-    const componentsList = ["alert", "avatar", "badge", "button", "checkbox", "input", "label", "link", "password-input", "radio", "slider", "spinner", "switch"];
-    const spinner = ora('Creating component...').start();
+    const detectSpinner = ora("Detecting project type...").start();
+    detectSpinner.succeed("Project type detected.");
+
+    const componentsList = [
+        "alert", "avatar", "badge", "button", "checkbox", "input",
+        "label", "link", "password-input", "radio", "slider",
+        "spinner", "switch"
+    ];
+
     if (components.length === 0) {
-        spinner.fail(chalk.red("No components provided"));
+        console.log(chalk.red("No components provided"));
         return;
     }
-    for (let component of components) {
+
+    const spinner = ora("Creating components...").start();
+    const notFoundComponents: string[] = [];
+
+    for (const component of components) {
         if (componentsList.includes(component)) {
-            await addComponent(component);
-            return;
+            try {
+                await addComponent(component);
+                spinner.succeed(chalk.green(`Component "${component}" added successfully.`));
+            } catch (error) {
+                const errorMessage = (error as Error).message;
+                spinner.fail(chalk.red(`Failed to add component "${component}": ${errorMessage}`));
+            }
         } else {
-            spinner.fail(chalk.red(`Component ${component} not found`));
-            return;
+            notFoundComponents.push(component);
         }
     }
-}
+
+    if (notFoundComponents.length > 0) {
+        spinner.fail(chalk.red(`Component(s) not found: ${notFoundComponents.join(", ")}`));
+    } else {
+        spinner.succeed(chalk.green("All components added successfully."));
+    }
+};
