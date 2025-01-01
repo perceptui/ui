@@ -1,6 +1,6 @@
 {
   "name": "@perceptui/cli",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A CLI tool for initializing projects with predefined templates.",
   "main": "dist/index.js",
   "type": "module",
