@@ -155,23 +155,25 @@ export const avatarVariants = cva(
         {} as Record<AvatarColors, string>
       ),
     },
-    compoundVariants: (Object.keys(avatarColors) as AvatarColors[]).flatMap((scheme) => [
-      {
-        variant: "solid",
-        color: scheme,
-        className: colorClasses[scheme].solid,
-      },
-      {
-        variant: "outline",
-        color: scheme,
-        className: colorClasses[scheme].outline,
-      },
-      {
-        variant: "soft",
-        color: scheme,
-        className: colorClasses[scheme].soft,
-      },
-    ]),
+    compoundVariants: (Object.keys(avatarColors) as AvatarColors[]).flatMap(
+      (scheme) => [
+        {
+          variant: "solid",
+          color: scheme,
+          className: colorClasses[scheme].solid,
+        },
+        {
+          variant: "outline",
+          color: scheme,
+          className: colorClasses[scheme].outline,
+        },
+        {
+          variant: "soft",
+          color: scheme,
+          className: colorClasses[scheme].soft,
+        },
+      ]
+    ),
     defaultVariants: {
       variant: "solid",
       radius: "md",
@@ -180,15 +182,19 @@ export const avatarVariants = cva(
   }
 );
 
-export type avatarProps = VariantProps<typeof avatarVariants> & ComponentProps<"div">
+export type avatarProps = VariantProps<typeof avatarVariants> &
+  ComponentProps<"div">;
 
-export type avatarImageProps = VariantProps<typeof avatarVariants> & ComponentProps<"img"> & {
-  src?: string;
-};
+export type avatarImageProps = VariantProps<typeof avatarVariants> &
+  ComponentProps<"img"> & {
+    src?: string;
+    alt: string;
+  };
 
-export type avatarFallbackProps = VariantProps<typeof avatarVariants> & ComponentProps<"div"> & {
-  src?: string;
-};
+export type avatarFallbackProps = VariantProps<typeof avatarVariants> &
+  ComponentProps<"div"> & {
+    src?: string;
+  };
 
 export const Avatar = forwardRef<HTMLDivElement, avatarProps>(
   ({ variant, color, radius, className, children, ...props }, forwardedRef) => (
@@ -207,7 +213,7 @@ export const Avatar = forwardRef<HTMLDivElement, avatarProps>(
 );
 
 export const AvatarImage = forwardRef<HTMLImageElement, avatarImageProps>(
-  ({ src, className, ...props }, forwardedRef) => {
+  ({ src, className, alt, ...props }, forwardedRef) => {
     if (src) {
       return (
         <img
@@ -215,6 +221,7 @@ export const AvatarImage = forwardRef<HTMLImageElement, avatarImageProps>(
           className={cn("absolute inset-0", className)}
           src={`${src}`}
           ref={forwardedRef}
+          alt={alt}
         />
       );
     }

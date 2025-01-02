@@ -92,7 +92,7 @@ export const alertVariants = cva(
 
 export type alertProps = VariantProps<typeof alertVariants> &
   ComponentProps<"div"> & {
-    message?: String;
+    message?: string;
     icon?: React.ReactNode;
     className?: string;
     children?: React.ReactNode;

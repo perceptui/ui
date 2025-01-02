@@ -1,3 +1,5 @@
+
+
 import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef, useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
@@ -7,9 +9,9 @@ import { cva } from "class-variance-authority";
 
 export const passwordInputVariants = cva(
   [
-    "w-96",
+    "w-full",
     "font-semibold",
-    "focus:outline",
+    "focus:outline-none outline-none",
     "px-2 py-1",
     "text-slate-700 focus:border-blue-500",
     "bg-transparent dark:text-white",
@@ -18,7 +20,8 @@ export const passwordInputVariants = cva(
     variants: {
       variant: {
         classic: "transition-colors duration-300 border-2",
-        standard: "transition-colors duration-300 border-b-2 border-t-0 border-l-0 border-r-0",
+        standard:
+          "transition-colors duration-300 border-b-2 border-t-0 border-l-0 border-r-0",
         ghost: "border-0 transition-colors duration-300",
       },
       radius: {
@@ -33,7 +36,7 @@ export const passwordInputVariants = cva(
     compoundVariants: [
       {
         variant: "classic",
-        className: `border-gray-700 dark:border-white`,
+        className: `border border-foreground`,
       },
       {
         variant: "standard",
@@ -51,11 +54,11 @@ export const passwordInputVariants = cva(
   }
 );
 
-
-export type passwordInputProps = VariantProps<typeof passwordInputVariants> & ComponentProps<"input"> & {
-  className?: string;
-  placeholder?: string;
-};
+export type passwordInputProps = VariantProps<typeof passwordInputVariants> &
+  ComponentProps<"input"> & {
+    className?: string;
+    placeholder?: string;
+  };
 
 export const PasswordInput = forwardRef<HTMLInputElement, passwordInputProps>(
   (
