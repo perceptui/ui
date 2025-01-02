@@ -1,5 +1,4 @@
-import { Alert, Button } from "./main";
-import { Flex } from "./layouts/flex";
+import { Button, Switch } from "./main";
 
 function App() {
   const changeTheme = (mode: string) => {
@@ -26,12 +25,7 @@ function App() {
         </Button>
       </div>
       <div className="mt-10">
-        <Flex gap={0}>
-          <Alert type="success" variant="solid" message="Success Alert" />
-          <Alert type="error" variant="solid" message="Error Alert" />
-          <Alert type="warning" variant="solid" message="Warning Alert" />
-          <Alert type="info" variant="solid" message="Info Alert" />
-        </Flex>
+        <Switch/>
       </div>
     </div>
   );

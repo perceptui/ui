@@ -23,7 +23,6 @@ export const badgeColors = {
   sky: "sky",
 };
 
-
 export type BadgeColors = keyof typeof badgeColors;
 
 export const colorClasses = {
@@ -127,23 +126,16 @@ export const colorClasses = {
 export const badgeVariants = cva(
   [
     "rounded-md",
-    "font-semibold",
-    "focus:outline-none",
+    "inline-flex items-center justify-center",
     "disabled:cursor-not-allowed",
+    "px-2.5 py-0.5 pb-1 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   ],
   {
     variants: {
       variant: {
-        solid: "transition-colors duration-300",
-        outline: "transition-colors duration-300 border-2",
-        soft: "transition-colors duration-300 bg-opacity-20",
-      },
-      size: {
-        xs: "px-2 py-0.5 text-xs",
-        sm: "px-2 py-0.5 text-sm",
-        md: "px-3 py-0.5 text-base",
-        lg: "px-3 py-0.5 text-lg",
-        xl: "px-3 py-0.5 text-2xl",
+        solid: "transition-colors duration-300 font-normal",
+        outline: "transition-colors duration-300 border-2 font-semibold ",
+        soft: "transition-colors duration-300 bg-opacity-20 font-semibold ",
       },
       radius: {
         none: "rounded-none",
@@ -161,26 +153,27 @@ export const badgeVariants = cva(
         {} as Record<BadgeColors, string>
       ),
     },
-    compoundVariants: (Object.keys(badgeColors) as BadgeColors[]).flatMap((scheme) => [
-      {
-        variant: "solid",
-        color: scheme,
-        className: colorClasses[scheme].solid,
-      },
-      {
-        variant: "outline",
-        color: scheme,
-        className: colorClasses[scheme].outline,
-      },
-      {
-        variant: "soft",
-        color: scheme,
-        className: colorClasses[scheme].soft,
-      },
-    ]),
+    compoundVariants: (Object.keys(badgeColors) as BadgeColors[]).flatMap(
+      (scheme) => [
+        {
+          variant: "solid",
+          color: scheme,
+          className: colorClasses[scheme].solid,
+        },
+        {
+          variant: "outline",
+          color: scheme,
+          className: colorClasses[scheme].outline,
+        },
+        {
+          variant: "soft",
+          color: scheme,
+          className: colorClasses[scheme].soft,
+        },
+      ]
+    ),
     defaultVariants: {
       variant: "solid",
-      size: "xs",
       radius: "md",
       color: "blue",
     },
@@ -195,12 +188,11 @@ export type badgeProps = VariantProps<typeof badgeVariants> & {
 export const Badge: React.FC<badgeProps> = ({
   variant,
   color,
-  size,
   radius,
   children,
   className,
 }) => (
-  <div className={cn(className, badgeVariants({ variant, size, color, radius }))}>
+  <div className={cn(className, badgeVariants({ variant, color, radius }))}>
     {children}
   </div>
 );
