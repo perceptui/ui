@@ -1,7 +1,6 @@
-import { SliderProps } from "@/types";
 import { cn } from "@/lib/utils";
-import { forwardRef } from "react";
-import { cva } from "class-variance-authority";
+import { ComponentProps, forwardRef } from "react";
+import { cva, VariantProps } from "class-variance-authority";
 
 export const sliderColors = {
   black: "black",
@@ -68,11 +67,13 @@ export const sliderVariants = cva(
         {} as Record<SliderColors, string>
       ),
     },
-    compoundVariants: (Object.keys(sliderColors) as SliderColors[]).flatMap((scheme) => [
-      {
-        color: scheme,
-      },
-    ]),
+    compoundVariants: (Object.keys(sliderColors) as SliderColors[]).flatMap(
+      (scheme) => [
+        {
+          color: scheme,
+        },
+      ]
+    ),
     defaultVariants: {
       size: "md",
       color: "blue",
@@ -80,6 +81,8 @@ export const sliderVariants = cva(
   }
 );
 
+export type SliderProps = VariantProps<typeof sliderVariants> &
+  ComponentProps<"input">;
 
 export const Slider = forwardRef<HTMLInputElement, SliderProps>(
   ({ className, color, size, ...props }, forwardedRef) => (
