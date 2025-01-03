@@ -1,0 +1,101 @@
+
+import { Callout } from "@/components/callout";
+
+#CLI
+<p style={{ fontSize: "1rem", marginTop: "0px", marginBottom: "2rem" }}>
+  Use the CLI to add components to your project.
+</p>
+
+<Callout>
+  **Note:** We just released `@perceptui/cli` CLI. See the
+  [changelog](/docs/changelog) for more information.
+</Callout>
+
+## list
+
+Use the `list` command to list all available templates.
+
+```bash copy
+npx @perceptui/cli@latest list
+```
+
+You will be given a list of all available templates.
+
+```tsx
+Listing available templates...
+
+Available templates:
+
+- vite-react-tailwind
+- vite-react-ts-tailwind
+- vite-react-shadcn
+- next-shadcn
+```
+
+### Options
+
+```tsx
+Usage: percept-cli list [options]
+
+List all available templates
+
+Options:
+  -h, --help  display help for command
+```
+
+## create
+
+Use the `create` command to initialize configuration and dependencies for a new project.
+
+The `create` command installs dependencies, configures your project with multiple frameworks to help you build faster.
+
+```bash copy
+npx @perceptui/cli@latest create <project-name>
+```
+
+You will be prompted to choose a template:
+
+```txt showLineNumbers
+? Select a template: ...
+> vite-react-Tailwind
+  vite-react-ts-Tailwind
+  vite-react-shadcn
+  next-shadcn
+```
+
+### Options
+
+```tsx
+Usage: @perceptui/cli create [options] <project-name>
+
+Create a new project from a template
+
+Options:
+  -t, --template <template>  Template to use
+  -p, --path <path>          Path to create the project in (default: ".")
+  -h, --help                 display help for command
+```
+
+## add
+
+Use the `add` command to add components to your project.
+
+```bash
+npx @perceptui/cli@latest add [options] [components...]
+```
+
+Add a new component:
+
+### Options
+
+```tsx
+Usage: shadcn add [options] [components...]
+
+add a component to your project
+
+Arguments:
+  components         the components to add.
+
+Options:
+  -h, --help  display help for command
+```

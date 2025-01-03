@@ -1,0 +1,266 @@
+import { Alert } from "@/components/percept-ui/alert";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { Info } from "lucide-react";
+
+<h1 className="text-4xl font-bold mt-5">Alert</h1>
+<p className="text-xl">
+  Alert to communicate a state that affects a system, feature or page.
+</p>
+<IssueHeader source="components/alert/alert" />
+
+<ComponentPreview component={
+  <Alert type="info" title="Percept UI Is Awesome">
+      You can add components to your app using the cli
+    </Alert>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function AlertDemo() {
+  return (
+    <Alert type="info" title="Percept UI Is Awesome">
+      You can add components to your app using the cli
+    </Alert>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+```bash copy
+npx @perceptui/cli@latest add alert
+```
+
+### Install as a package
+
+```bash copy
+npm install @perceptui/alert
+```
+
+## API References
+
+| Prop      | Type                                          | Description          | Default |
+| :-------- | :-------------------------------------------- | :------------------- | :------ |
+| variant   | `"solid" \| "outline" \| "surface`            | Form of the Alert    | solid   |
+| type      | `"success" \| "warning" \| "error" \| "info"` | Type of the Alert    | success |
+| message   | `string`                                      | Message of the Alert | \_      |
+| icon      | `ReactNode`                                   | Icon of the Alert    | type    |
+| className | `string`                                      | className            | \_      |
+
+## Examples
+
+### Variant
+
+Use the `variant` prop to control the visual style of the button.
+
+#### Solid Variant
+
+<ComponentPreview component={
+    <Alert variant={"solid"}>
+    This is a solid variant Alert.
+    </Alert>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function SolidAlertDemo() {
+  return (
+    <Alert variant="solid">
+      This is a outline variant Alert.
+    </Alert>
+  )
+}
+```
+</ComponentPreview>
+
+#### Outline Variant
+
+<ComponentPreview component={
+    <Alert variant={"outline"}>
+    This is a outline variant Alert.
+    </Alert>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function OutlineAlertDemo() {
+  return (
+    <Alert variant="outline">
+      This is a outline variant Alert.
+    </Alert>
+  )
+}
+```
+</ComponentPreview>
+
+#### Surface Variant
+
+<ComponentPreview component={
+    <Alert variant={"surface"}>
+    This is a outline variant Alert.
+    </Alert>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function SurfaceAlertDemo() {
+  return (
+    <Alert variant="surface">
+      This is a surface variant Alert.
+    </Alert>
+  )
+}
+```
+</ComponentPreview>
+
+### Type
+
+Use the `type` prop to control the type of the alert.
+
+#### Success Type
+
+<ComponentPreview component={
+  <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="success" variant={"solid"}>
+    This is a solid success Alert.
+    </Alert>
+    <Alert type="success" variant={"outline"}>
+    This is a outline success Alert.
+    </Alert>
+    <Alert type="success" variant={"surface"}>
+    This is a surface success Alert.
+    </Alert>
+  </div>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function SurfaceAlertDemo() {
+  return (
+    <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="success" variant={"solid"}>
+    This is a solid success Alert.
+    </Alert>
+    <Alert type="success" variant={"outline"}>
+    This is a outline success Alert.
+    </Alert>
+    <Alert type="success" variant={"surface"}>
+    This is a surface success Alert.
+    </Alert>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Info Type
+
+<ComponentPreview component={
+  <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="info" variant={"solid"}>
+    This is a solid info Alert.
+    </Alert>
+    <Alert type="info" variant={"outline"}>
+    This is a outline info Alert.
+    </Alert>
+    <Alert type="info" variant={"surface"}>
+    This is a surface info Alert.
+    </Alert>
+  </div>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function SurfaceAlertDemo() {
+  return (
+    <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="info" variant={"solid"}>
+    This is a solid info Alert.
+    </Alert>
+    <Alert type="info" variant={"outline"}>
+    This is a outline info Alert.
+    </Alert>
+    <Alert type="info" variant={"surface"}>
+    This is a surface info Alert.
+    </Alert>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Error Type
+
+<ComponentPreview component={
+  <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="error" variant={"solid"}>
+    This is a solid error Alert.
+    </Alert>
+    <Alert type="error" variant={"outline"}>
+    This is a outline error Alert.
+    </Alert>
+    <Alert type="error" variant={"surface"}>
+    This is a surface error Alert.
+    </Alert>
+  </div>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function SurfaceAlertDemo() {
+  return (
+    <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="error" variant={"solid"}>
+    This is a solid error Alert.
+    </Alert>
+    <Alert type="error" variant={"outline"}>
+    This is a outline error Alert.
+    </Alert>
+    <Alert type="error" variant={"surface"}>
+    This is a surface error Alert.
+    </Alert>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Warning Type
+
+<ComponentPreview component={
+  <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="warning" variant={"solid"}>
+    This is a solid warning Alert.
+    </Alert>
+    <Alert type="warning" variant={"outline"}>
+    This is a outline warning Alert.
+    </Alert>
+    <Alert type="warning" variant={"surface"}>
+    This is a surface warning Alert.
+    </Alert>
+  </div>
+    }>
+```jsx code copy
+import { Alert } from "@/components/percept-ui/alert"
+
+export function SurfaceAlertDemo() {
+  return (
+    <div className="flex flex-col gap-2 p-4 bg-blue-950/15 mb-2 rounded-lg w-full">
+    <Alert type="warning" variant={"solid"}>
+    This is a solid warning Alert.
+    </Alert>
+    <Alert type="warning" variant={"outline"}>
+    This is a outline warning Alert.
+    </Alert>
+    <Alert type="warning" variant={"surface"}>
+    This is a surface warning Alert.
+    </Alert>
+  </div>
+  )
+}
+```
+</ComponentPreview>
