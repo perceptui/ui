@@ -1,0 +1,347 @@
+import { Button } from "@/components/percept-ui/button";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Button</h1>
+<p className="text-xl">Styled button component.</p>
+<IssueHeader source="components/button/button" />
+
+<ComponentPreview component={
+  <Button>Button</Button>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function ButtonDemo() {
+  return (
+    <Button>Button</Button>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add button`}
+  yarnCommand={`npx @perceptui/cli@latest add button`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add button`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Button
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx copy
+import { Button } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <Button>Button</Button>
+    }>
+```jsx code copy
+import { Button } from "@perceptui/ui"
+
+export function AlertDemo() {
+  return (
+    <Button>Button</Button>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type                                     | Description          | Default |
+| :-------- | :--------------------------------------- | :------------------- | :------ |
+| variant   | `"solid" \| "outline" \| "ghost"`        | Form of the Button   | solid   |
+| color     | `string`                                 | Color of the Button  | blue    |
+| radius    | `"none"\|"sm"\|"md"\|"lg"\|"xl"\|"full"` | Radius of the Button | sm      |
+| size      | `"xs"\|"sm"\|"md"\|"lg"\|"xl"`           | Size of the Button   | sm      |
+| className | `string`                                 | className            | \_      |
+
+## Examples
+
+### Variant
+
+Use the `variant` prop to control the visual style of the button.
+
+#### Solid Variant
+
+<ComponentPreview component={
+    <Button variant="solid">Button</Button>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function SolidButtonDemo() {
+  return (
+    <Button variant="solid">Button</Button>
+  )
+}
+```
+</ComponentPreview>
+
+#### Outline Variant
+
+<ComponentPreview component={
+    <Button variant="outline">Button</Button>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function OutlineButtonDemo() {
+  return (
+    <Button variant="outline">Button</Button>
+  )
+}
+```
+</ComponentPreview>
+
+#### Ghost Variant
+
+<ComponentPreview component={
+    <Button variant="ghost">Button</Button>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function GhostButtonDemo() {
+  return (
+    <Button variant="ghost">Button</Button>
+  )
+}
+```
+</ComponentPreview>
+
+### Color
+
+Use the `color` prop to control the color of the button.
+
+#### Color with solid variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button variant="solid" color="blue">Button</Button>
+    <Button variant="solid" color="emerald">Button</Button>
+    <Button variant="solid" color="gray">Button</Button>
+    <Button variant="solid" color="rose">Button</Button>
+    <Button variant="solid" color="cyan">Button</Button>
+    <Button variant="solid" color="yellow">Button</Button>
+    <Button variant="solid" color="light">Button</Button>
+    <Button variant="solid" color="red">Button</Button>
+    <Button variant="solid" color="green">Button</Button>
+    <Button variant="solid" color="amber">Button</Button>
+    <Button variant="solid" color="orange">Button</Button>
+    <Button variant="solid" color="pink">Button</Button>
+    <Button variant="solid" color="purple">Button</Button>
+    <Button variant="solid" color="indigo">Button</Button>
+    <Button variant="solid" color="teal">Button</Button>
+    <Button variant="solid" color="lime">Button</Button>
+    <Button variant="solid" color="sky">Button</Button>
+  </div>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function ColorDemoWithSolidVariant() {
+  return (
+     <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button variant="solid" color="blue">Button</Button>
+    <Button variant="solid" color="emerald">Button</Button>
+    <Button variant="solid" color="gray">Button</Button>
+    <Button variant="solid" color="rose">Button</Button>
+    <Button variant="solid" color="cyan">Button</Button>
+    <Button variant="solid" color="yellow">Button</Button>
+    <Button variant="solid" color="light">Button</Button>
+    <Button variant="solid" color="red">Button</Button>
+    <Button variant="solid" color="green">Button</Button>
+    <Button variant="solid" color="amber">Button</Button>
+    <Button variant="solid" color="orange">Button</Button>
+    <Button variant="solid" color="pink">Button</Button>
+    <Button variant="solid" color="purple">Button</Button>
+    <Button variant="solid" color="indigo">Button</Button>
+    <Button variant="solid" color="teal">Button</Button>
+    <Button variant="solid" color="lime">Button</Button>
+    <Button variant="solid" color="sky">Button</Button>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Color with outline variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button variant="outline" color="blue">Button</Button>
+    <Button variant="outline" color="emerald">Button</Button>
+    <Button variant="outline" color="gray">Button</Button>
+    <Button variant="outline" color="rose">Button</Button>
+    <Button variant="outline" color="cyan">Button</Button>
+    <Button variant="outline" color="yellow">Button</Button>
+    <Button variant="outline" color="light">Button</Button>
+    <Button variant="outline" color="red">Button</Button>
+    <Button variant="outline" color="green">Button</Button>
+    <Button variant="outline" color="amber">Button</Button>
+    <Button variant="outline" color="orange">Button</Button>
+    <Button variant="outline" color="pink">Button</Button>
+    <Button variant="outline" color="purple">Button</Button>
+    <Button variant="outline" color="indigo">Button</Button>
+    <Button variant="outline" color="teal">Button</Button>
+    <Button variant="outline" color="lime">Button</Button>
+    <Button variant="outline" color="sky">Button</Button>
+  </div>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function ColorDemoWithOutlineVariant() {
+  return (
+     <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button variant="outline" color="blue">Button</Button>
+    <Button variant="outline" color="emerald">Button</Button>
+    <Button variant="outline" color="gray">Button</Button>
+    <Button variant="outline" color="rose">Button</Button>
+    <Button variant="outline" color="cyan">Button</Button>
+    <Button variant="outline" color="yellow">Button</Button>
+    <Button variant="outline" color="light">Button</Button>
+    <Button variant="outline" color="red">Button</Button>
+    <Button variant="outline" color="green">Button</Button>
+    <Button variant="outline" color="amber">Button</Button>
+    <Button variant="outline" color="orange">Button</Button>
+    <Button variant="outline" color="pink">Button</Button>
+    <Button variant="outline" color="purple">Button</Button>
+    <Button variant="outline" color="indigo">Button</Button>
+    <Button variant="outline" color="teal">Button</Button>
+    <Button variant="outline" color="lime">Button</Button>
+    <Button variant="outline" color="sky">Button</Button>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Color with ghost variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button variant="ghost" color="blue">Button</Button>
+    <Button variant="ghost" color="emerald">Button</Button>
+    <Button variant="ghost" color="gray">Button</Button>
+    <Button variant="ghost" color="rose">Button</Button>
+    <Button variant="ghost" color="cyan">Button</Button>
+    <Button variant="ghost" color="yellow">Button</Button>
+    <Button variant="ghost" color="light">Button</Button>
+    <Button variant="ghost" color="red">Button</Button>
+    <Button variant="ghost" color="green">Button</Button>
+    <Button variant="ghost" color="amber">Button</Button>
+    <Button variant="ghost" color="orange">Button</Button>
+    <Button variant="ghost" color="pink">Button</Button>
+    <Button variant="ghost" color="purple">Button</Button>
+    <Button variant="ghost" color="indigo">Button</Button>
+    <Button variant="ghost" color="teal">Button</Button>
+    <Button variant="ghost" color="lime">Button</Button>
+    <Button variant="ghost" color="sky">Button</Button>
+  </div>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function ColorDemoWithGhostVariant() {
+  return (
+     <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button variant="ghost" color="blue">Button</Button>
+    <Button variant="ghost" color="emerald">Button</Button>
+    <Button variant="ghost" color="gray">Button</Button>
+    <Button variant="ghost" color="rose">Button</Button>
+    <Button variant="ghost" color="cyan">Button</Button>
+    <Button variant="ghost" color="yellow">Button</Button>
+    <Button variant="ghost" color="light">Button</Button>
+    <Button variant="ghost" color="red">Button</Button>
+    <Button variant="ghost" color="green">Button</Button>
+    <Button variant="ghost" color="amber">Button</Button>
+    <Button variant="ghost" color="orange">Button</Button>
+    <Button variant="ghost" color="pink">Button</Button>
+    <Button variant="ghost" color="purple">Button</Button>
+    <Button variant="ghost" color="indigo">Button</Button>
+    <Button variant="ghost" color="teal">Button</Button>
+    <Button variant="ghost" color="lime">Button</Button>
+    <Button variant="ghost" color="sky">Button</Button>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+<Callout>There are more color properties. Take your time to explore</Callout>
+
+### Radius
+
+Use the `radius` prop to assign a specific radius value.
+
+<ComponentPreview component={
+  <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button radius="none">Button</Button>
+    <Button radius="sm">Button</Button>
+    <Button radius="md">Button</Button>
+    <Button radius="lg">Button</Button>
+    <Button radius="xl">Button</Button>
+    <Button radius="full">Button</Button>
+  </div>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function ButtonRadiusDemo() {
+  return (
+    <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button radius="none">Button</Button>
+    <Button radius="sm">Button</Button>
+    <Button radius="md">Button</Button>
+    <Button radius="lg">Button</Button>
+    <Button radius="xl">Button</Button>
+    <Button radius="full">Button</Button>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+### Size
+
+Use the `size` prop to assign a specific size value.
+
+<ComponentPreview component={
+  <div className="flex items-end gap-2 bg-blue-500/15 mb-2 rounded-lg w-full">
+      <Button size="xs">Button</Button>
+  <Button size="sm">Button</Button>
+  <Button size="md">Button</Button>
+  <Button size="lg">Button</Button>
+  <Button size="xl">Button</Button>
+  </div>
+    }>
+```jsx code copy
+import { Button } from "@/components/percept-ui/button"
+
+export function ButtonSizeDemo() {
+  return (
+    <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Button size="xs">Button</Button>
+  <Button size="sm">Button</Button>
+  <Button size="md">Button</Button>
+  <Button size="lg">Button</Button>
+  <Button size="xl">Button</Button>
+  </div>
+  )
+}
+```
+</ComponentPreview>

@@ -1,0 +1,319 @@
+import { Badge } from "@/components/percept-ui/badge";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Badge</h1>
+<p className="text-xl">A styled badge.</p>
+<IssueHeader source="components/badge/badge" />
+
+<ComponentPreview component={
+  <Badge>Badge</Badge>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function BadgeDemo() {
+  return (
+    <Badge>Badge</Badge>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add badge`}
+  yarnCommand={`npx @perceptui/cli@latest add badge`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add badge`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Badge
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx copy
+import { Badge } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <Badge>Badge</Badge>
+    }>
+```jsx code copy
+import { Badge } from "@perceptui/ui"
+
+export function AlertDemo() {
+  return (
+    <Badge>Badge</Badge>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type                                     | Description         | Default |
+| :-------- | :--------------------------------------- | :------------------ | :------ |
+| variant   | `"solid" \| "outline" \| "soft"`         | Form of the Badge   | solid   |
+| color     | `string`                                 | Color of the Badge  | blue    |
+| radius    | `"none"\|"sm"\|"md"\|"lg"\|"xl"\|"full"` | Radius of the Badge | none    |
+| size      | `"xs"\|"sm"\|"md"\|"lg"\|"xl"`           | Size of the Badge   | xs      |
+| className | `string`                                 | className           | \_      |
+
+## Examples
+
+### Variant
+
+Use the `variant` prop to control the visual style of the Badge.
+
+#### Solid Variant
+
+<ComponentPreview component={
+    <Badge variant="solid">Badge</Badge>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function SolidBadgeDemo() {
+  return (
+    <Badge variant="solid">Badge</Badge>
+  )
+}
+```
+</ComponentPreview>
+
+#### Outline Variant
+
+<ComponentPreview component={
+    <Badge variant="outline">Badge</Badge>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function OutlineBadgeDemo() {
+  return (
+    <Badge variant="outline">Badge</Badge>
+  )
+}
+```
+</ComponentPreview>
+
+#### Soft Variant
+
+<ComponentPreview component={
+    <Badge variant="soft">Badge</Badge>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function SoftBadgeDemo() {
+  return (
+    <Badge variant="soft">Badge</Badge>
+  )
+}
+```
+</ComponentPreview>
+
+### Color
+
+Use the `color` prop to control the color of the Badge.
+
+#### Color with solid variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="solid" color="blue">Badge</Badge>
+    <Badge variant="solid" color="emerald">Badge</Badge>
+    <Badge variant="solid" color="gray">Badge</Badge>
+    <Badge variant="solid" color="rose">Badge</Badge>
+    <Badge variant="solid" color="cyan">Badge</Badge>
+    <Badge variant="solid" color="yellow">Badge</Badge>
+    <Badge variant="solid" color="light">Badge</Badge>
+    <Badge variant="solid" color="red">Badge</Badge>
+    <Badge variant="solid" color="green">Badge</Badge>
+    <Badge variant="solid" color="amber">Badge</Badge>
+    <Badge variant="solid" color="orange">Badge</Badge>
+    <Badge variant="solid" color="pink">Badge</Badge>
+    <Badge variant="solid" color="purple">Badge</Badge>
+    <Badge variant="solid" color="indigo">Badge</Badge>
+    <Badge variant="solid" color="teal">Badge</Badge>
+    <Badge variant="solid" color="lime">Badge</Badge>
+    <Badge variant="solid" color="sky">Badge</Badge>
+  </div>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function ColorDemoWithSolidVariant() {
+  return (
+     <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="solid" color="blue">Badge</Badge>
+    <Badge variant="solid" color="emerald">Badge</Badge>
+    <Badge variant="solid" color="gray">Badge</Badge>
+    <Badge variant="solid" color="rose">Badge</Badge>
+    <Badge variant="solid" color="cyan">Badge</Badge>
+    <Badge variant="solid" color="yellow">Badge</Badge>
+    <Badge variant="solid" color="light">Badge</Badge>
+    <Badge variant="solid" color="red">Badge</Badge>
+    <Badge variant="solid" color="green">Badge</Badge>
+    <Badge variant="solid" color="amber">Badge</Badge>
+    <Badge variant="solid" color="orange">Badge</Badge>
+    <Badge variant="solid" color="pink">Badge</Badge>
+    <Badge variant="solid" color="purple">Badge</Badge>
+    <Badge variant="solid" color="indigo">Badge</Badge>
+    <Badge variant="solid" color="teal">Badge</Badge>
+    <Badge variant="solid" color="lime">Badge</Badge>
+    <Badge variant="solid" color="sky">Badge</Badge>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Color with outline variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="outline" color="blue">Badge</Badge>
+    <Badge variant="outline" color="emerald">Badge</Badge>
+    <Badge variant="outline" color="gray">Badge</Badge>
+    <Badge variant="outline" color="rose">Badge</Badge>
+    <Badge variant="outline" color="cyan">Badge</Badge>
+    <Badge variant="outline" color="yellow">Badge</Badge>
+    <Badge variant="outline" color="light">Badge</Badge>
+    <Badge variant="outline" color="red">Badge</Badge>
+    <Badge variant="outline" color="green">Badge</Badge>
+    <Badge variant="outline" color="amber">Badge</Badge>
+    <Badge variant="outline" color="orange">Badge</Badge>
+    <Badge variant="outline" color="pink">Badge</Badge>
+    <Badge variant="outline" color="purple">Badge</Badge>
+    <Badge variant="outline" color="indigo">Badge</Badge>
+    <Badge variant="outline" color="teal">Badge</Badge>
+    <Badge variant="outline" color="lime">Badge</Badge>
+    <Badge variant="outline" color="sky">Badge</Badge>
+  </div>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function ColorDemoWithOutlineVariant() {
+  return (
+     <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="outline" color="blue">Badge</Badge>
+    <Badge variant="outline" color="emerald">Badge</Badge>
+    <Badge variant="outline" color="gray">Badge</Badge>
+    <Badge variant="outline" color="rose">Badge</Badge>
+    <Badge variant="outline" color="cyan">Badge</Badge>
+    <Badge variant="outline" color="yellow">Badge</Badge>
+    <Badge variant="outline" color="light">Badge</Badge>
+    <Badge variant="outline" color="red">Badge</Badge>
+    <Badge variant="outline" color="green">Badge</Badge>
+    <Badge variant="outline" color="amber">Badge</Badge>
+    <Badge variant="outline" color="orange">Badge</Badge>
+    <Badge variant="outline" color="pink">Badge</Badge>
+    <Badge variant="outline" color="purple">Badge</Badge>
+    <Badge variant="outline" color="indigo">Badge</Badge>
+    <Badge variant="outline" color="teal">Badge</Badge>
+    <Badge variant="outline" color="lime">Badge</Badge>
+    <Badge variant="outline" color="sky">Badge</Badge>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Color with soft variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="soft" color="blue">Badge</Badge>
+    <Badge variant="soft" color="emerald">Badge</Badge>
+    <Badge variant="soft" color="gray">Badge</Badge>
+    <Badge variant="soft" color="rose">Badge</Badge>
+    <Badge variant="soft" color="cyan">Badge</Badge>
+    <Badge variant="soft" color="yellow">Badge</Badge>
+    <Badge variant="soft" color="light">Badge</Badge>
+    <Badge variant="soft" color="red">Badge</Badge>
+    <Badge variant="soft" color="green">Badge</Badge>
+    <Badge variant="soft" color="amber">Badge</Badge>
+    <Badge variant="soft" color="orange">Badge</Badge>
+    <Badge variant="soft" color="pink">Badge</Badge>
+    <Badge variant="soft" color="purple">Badge</Badge>
+    <Badge variant="soft" color="indigo">Badge</Badge>
+    <Badge variant="soft" color="teal">Badge</Badge>
+    <Badge variant="soft" color="lime">Badge</Badge>
+    <Badge variant="soft" color="sky">Badge</Badge>
+  </div>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function ColorDemoWithSoftVariant() {
+  return (
+     <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="soft" color="blue">Badge</Badge>
+    <Badge variant="soft" color="emerald">Badge</Badge>
+    <Badge variant="soft" color="gray">Badge</Badge>
+    <Badge variant="soft" color="rose">Badge</Badge>
+    <Badge variant="soft" color="cyan">Badge</Badge>
+    <Badge variant="soft" color="yellow">Badge</Badge>
+    <Badge variant="soft" color="light">Badge</Badge>
+    <Badge variant="soft" color="red">Badge</Badge>
+    <Badge variant="soft" color="green">Badge</Badge>
+    <Badge variant="soft" color="amber">Badge</Badge>
+    <Badge variant="soft" color="orange">Badge</Badge>
+    <Badge variant="soft" color="pink">Badge</Badge>
+    <Badge variant="soft" color="purple">Badge</Badge>
+    <Badge variant="soft" color="indigo">Badge</Badge>
+    <Badge variant="soft" color="teal">Badge</Badge>
+    <Badge variant="soft" color="lime">Badge</Badge>
+    <Badge variant="soft" color="sky">Badge</Badge>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+<Callout>There are more color properties. Take your time to explore</Callout>
+
+### Radius
+
+Use the `radius` prop to assign a specific radius value.
+
+<ComponentPreview component={
+  <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="soft" radius="none">Badge</Badge>
+    <Badge variant="soft" radius="xs">Badge</Badge>
+    <Badge variant="soft" radius="sm">Badge</Badge>
+    <Badge variant="soft" radius="md">Badge</Badge>
+    <Badge variant="soft" radius="lg">Badge</Badge>
+    <Badge variant="soft" radius="xl">Badge</Badge>
+    <Badge variant="soft" radius="full">Badge</Badge>
+  </div>
+    }>
+```jsx code copy
+import { Badge } from "@/components/percept-ui/badge"
+
+export function BadgeRadiusDemo() {
+  return (
+    <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Badge variant="soft" radius="none">Badge</Badge>
+    <Badge variant="soft" radius="xs">Badge</Badge>
+    <Badge variant="soft" radius="sm">Badge</Badge>
+    <Badge variant="soft" radius="md">Badge</Badge>
+    <Badge variant="soft" radius="lg">Badge</Badge>
+    <Badge variant="soft" radius="xl">Badge</Badge>
+    <Badge variant="soft" radius="full">Badge</Badge>
+  </div>
+  )
+}
+```
+</ComponentPreview>

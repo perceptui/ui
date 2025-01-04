@@ -1,0 +1,500 @@
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from "@/components/percept-ui/avatar";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Avatar</h1>
+<p className="text-xl">Profile picture, user initials and fallback icon.</p>
+<IssueHeader source="components/avatar/avatar" />
+
+<ComponentPreview component={
+  <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Avatar radius="full">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+    }>
+```tsx code copy
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function AvatarDemo() {
+  return (
+    <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Avatar radius="full">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Install the @perceptui/ui package using your preferred package manager."
+  npmCommand={`npx @perceptui/cli@latest add avatar`}
+  yarnCommand={`npx @perceptui/cli@latest add avatar`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add avatar`}
+/>
+
+### Import from `@perceptui/ui` package
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Avatar
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx code copy
+import { Avatar, AvatarImage, AvatarFallback } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Avatar radius="full">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+    }>
+```jsx code copy
+import { Avatar, AvatarImage, AvatarFallback } from "@perceptui/ui"
+
+export function AvatarDemo() {
+  return (
+    <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Avatar radius="full">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type                                     | Description                            | Default |
+| :-------- | :--------------------------------------- | :------------------------------------- | :------ |
+| variant   | `"solid" \| "outline" \| "soft"`         | Form of the Avatar                     | solid   |
+| color     | `string`                                 | Color of the Avatar                    | blue    |
+| radius    | `"none"\|"sm"\|"md"\|"lg"\|"xl"\|"full"` | Radius of the Avatar                   | lg      |
+| src       | `string`                                 | Link of the image to be used in Avatar | -       |
+| fallback  | `ReactNode`                              | -                                      | -       |
+| className | `string`                                 | className                              | \_      |
+
+## Examples
+
+### Variant
+
+Use the `variant` prop to control the visual style of the avatar.
+
+#### Solid Variant
+
+<ComponentPreview component={
+    <Avatar variant="solid" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    }>
+```jsx code copy
+import { Avatar, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function SolidAvatarDemo() {
+  return (
+    <Avatar variant="solid" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  )
+}
+```
+</ComponentPreview>
+
+#### Outline Variant
+
+<ComponentPreview component={
+    <Avatar variant="outline" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    }>
+```jsx code copy
+import { Avatar, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function OutlineAvatarDemo() {
+  return (
+    <Avatar variant="outline" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  )
+}
+```
+</ComponentPreview>
+
+#### Soft Variant
+
+<ComponentPreview component={
+    <Avatar variant="soft" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    }>
+```jsx code copy
+import { Avatar, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function SoftAvatarDemo() {
+  return (
+    <Avatar variant="soft" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  )
+}
+```
+</ComponentPreview>
+
+### Color
+
+Use the `color` prop to control the color of the avatar.
+
+#### Color with solid variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Avatar color="blue" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="red" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="green" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="yellow" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="pink" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="cyan" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="light" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="indigo" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="rose" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="lime" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="emerald" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="teal" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+    }>
+```jsx code copy
+import { Avatar, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function ColorDemoWithSolidVariant() {
+  return (
+   <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Avatar color="blue" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="red" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="green" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="yellow" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="pink" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="cyan" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="light" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="indigo" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="rose" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="lime" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="emerald" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar color="teal" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Color with outline variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Avatar variant="outline" color="blue" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="red" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="green" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="yellow" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="pink" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="cyan" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="light" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="indigo" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="rose" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="lime" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="emerald" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="teal" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+    }>
+```jsx code copy
+import { Avatar, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function ColorDemoWithOutlineVariant() {
+  return (
+   <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Avatar variant="outline" color="blue" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="red" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="green" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="yellow" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="pink" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="cyan" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="light" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="indigo" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="rose" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="lime" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="emerald" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="outline" color="teal" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+#### Color with soft variant
+
+<ComponentPreview component={
+  <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Avatar variant="soft" color="blue" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="red" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="green" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="yellow" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="pink" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="cyan" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="light" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="indigo" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="rose" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="lime" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="emerald" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="teal" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+    }>
+```jsx code copy
+import { Avatar, AvatarFallback } from "@/components/percept-ui/avatar"
+
+export function ColorDemoWithSoftVariant() {
+  return (
+   <div className="flex flex-wrap gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Avatar variant="soft" color="blue" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="red" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="green" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="yellow" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="pink" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="cyan" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="light" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="indigo" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="rose" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="lime" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="emerald" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+    <Avatar variant="soft" color="teal" radius="full">
+      <AvatarFallback>A</AvatarFallback>
+    </Avatar>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+<Callout>There are more color properties. Take your time to explore</Callout>
+
+### Radius
+
+Use the `radius` prop to assign a specific radius value.
+
+<ComponentPreview component={
+  <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg w-full">
+    <Avatar radius="none">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="sm">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="md">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="lg">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="xl">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="full">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+  </div>
+    }>
+```jsx code copy
+import { Avatar, AvatarImage } from "@/components/percept-ui/avatar"
+
+export function AvatarRadiusDemo() {
+  return (
+  <div className="flex gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Avatar radius="none">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="sm">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="md">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="lg">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="xl">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+    <Avatar radius="full">
+      <AvatarImage src="https://images.pexels.com/photos/27269560/pexels-photo-27269560/free-photo-of-marti.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+    </Avatar>
+  </div>
+  )
+}
+```
+</ComponentPreview>
