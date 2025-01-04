@@ -3,7 +3,7 @@ import { FaGithub, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="lg:px-28 px-6 z-[70]">
+    <footer className="lg:px-28 px-6 z-[70] w-full">
       <div className="lg:container mx-auto px-4 text-center text-sm z-40 border-t h-20 flex items-center justify-between">
         <div className="text-muted-foreground">
           Building in Public by{" "}

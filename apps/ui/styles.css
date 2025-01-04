@@ -102,3 +102,7 @@ body {
   --tw-shadow: 0 0px 0px;
   @apply pt-1 border-t border-border;
 }
+
+footer{
+  @apply bg-background !important;
+}

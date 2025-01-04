@@ -1,7 +1,8 @@
 import { Alert } from "@/components/percept-ui/alert";
 import { IssueHeader } from "@/components/issue-header";
 import { ComponentPreview } from "@/components/component-preview";
-import { Info } from "lucide-react";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
 
 <h1 className="text-4xl font-bold mt-5">Alert</h1>
 <p className="text-xl">
@@ -31,15 +32,43 @@ export function AlertDemo() {
 
 ### CLI
 
+<CommandsWrapper
+  description="Install the @perceptui/ui package using your preferred package manager."
+  npmCommand={`npx @perceptui/cli@latest add alert`}
+  yarnCommand={`npx @perceptui/cli@latest add alert`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add alert`}
+/>
+
+
+### Import from `@perceptui/ui` package
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Alert from
+  `@perceptui/ui`.
+</Callout>
+
+
 ```bash copy
-npx @perceptui/cli@latest add alert
+import { Alert } from "@perceptui/ui";
 ```
 
-### Install as a package
+<ComponentPreview component={
+  <Alert type="info" title="Percept UI Is Awesome">
+      You can add components to your app using the cli
+    </Alert>
+    }>
+```jsx code copy
+import { Alert } from "@perceptui/ui"
 
-```bash copy
-npm install @perceptui/alert
+export function AlertDemo() {
+  return (
+    <Alert type="info" title="Percept UI Is Awesome">
+      You can add components to your app using the cli
+    </Alert>
+  )
+}
 ```
+</ComponentPreview>
 
 ## API References
 

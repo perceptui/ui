@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Button } from "./percept-ui/button";
-import { Check, Copy, CopyCheck } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 
 interface CommandsWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   npmCommand?: string;
@@ -137,7 +137,7 @@ export function CommandsWrapper({
 
 interface CommandProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function Command({ children }: CommandProps) {
+function Command({ children }: CommandProps) {
   return (
     <pre className="w-full rounded-md bg-gray-100 p-4 dark:bg-black dark:text-white overflow-auto text-sky-600">
       <code className="dark:text-blue-300 text-blue-700 text-sm">
