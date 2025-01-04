@@ -6,17 +6,13 @@ import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-  name: string;
-  description?: string;
   hideCode?: boolean;
   component: React.ReactNode;
 }
 
 export function ComponentPreview({
-  name,
   children,
   className,
-  description,
   hideCode = false,
   component,
   ...props
