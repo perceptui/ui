@@ -82,10 +82,10 @@ const getComponent = async ({
         let content: string;
         switch (projectType) {
             case ProjectType.REACT:
-                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/lib/src/components/${componentName}.tsx`;
+                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/ui/registry/react/${componentName}.txt`;
                 break;
             case ProjectType.NEXT_JS:
-                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/lib/src/components/${componentName}.tsx`;
+                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/ui/registry/next/${componentName}.txt`;
                 break;
             default:
                 throw new Error("Unsupported project type");
@@ -144,12 +144,12 @@ const addComponent = async (componentName: string) => {
                 componentName,
                 projectType: ProjectType.NEXT_JS,
             });
-            console.log(`✅ React project detected.`);
+            console.log(chalk.green(`React project detected.`));
             createComponent(path.join(currentDir, "src"), componentName, data);
         }
         // Next.js project handling
         else if (isNextJs) {
-            console.log(`✅ Next.js project detected.`);
+            console.log(chalk.green(`Next.js project detected.`));
 
             if (isNextAppSrcRouter || isPageSrcRouter) {
                 let data = await getComponent({
