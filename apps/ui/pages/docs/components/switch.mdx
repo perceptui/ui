@@ -1,91 +1,69 @@
-import { Switch } from "@perceptui/ui";
+import { Switch } from "@/components/percept-ui/switch";
 import { IssueHeader } from "@/components/issue-header";
-import { Info } from "lucide-react";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
 
 <h1 className="text-4xl font-bold mt-5">Switch</h1>
 <p className="text-xl">Renders a Switch.</p>
 <IssueHeader source="components/switch/switch" />
 
-Start using via importing:
+<ComponentPreview component={
+  <div className="flex items-center justify-center p-2 w-96 mx-auto">
+    <Switch/>
+  </div>
+    }>
+```jsx code copy
+import { Switch } from "@/components/percept-ui/switch"
+
+export function SwitchDemo() {
+  return (
+    <Switch/>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add switch`}
+  yarnCommand={`npx @perceptui/cli@latest add switch`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add switch`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Switch
+  from `@perceptui/ui`.
+</Callout>
 
 ```tsx code copy
 import { Switch } from "@perceptui/ui";
 ```
 
-<div className="flex flex-col my-6 w-full">
-  <div className="flex w-full gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
-    <Switch />
+<ComponentPreview component={
+  <div className="flex items-center justify-center p-2 w-96 mx-auto">
+    <Switch/>
   </div>
-  <div className="block w-full py-0">
-    ```jsx code copy
-    <Switch />
-    ```
-  </div>
-</div>
+    }>
+```jsx code copy
+import { Switch } from "@perceptui/ui"
+
+export function SwitchDemo() {
+  return (
+    <Switch/>
+  )
+}
+```
+</ComponentPreview>
 
 ## API References
 
 | Prop      | Type     | Description         | Default |
 | :-------- | :------- | :------------------ | :------ |
-| color     | `string` | Color of the Slider | blue    |
 | className | `string` | className           | \_      |
-
-## Examples
-
-### Color
-
-<div className="flex flex-col my-6 w-full">
-  <div className="flex flex-wrap items-center justify-around px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
-    <div className="flex flex-col gap-2">
-      <Switch color="red" />
-      <Switch color="yellow" />
-      <Switch color="green" />
-      <Switch color="cyan" />
-      <Switch color="dark" />
-    </div>
-    <div className="flex flex-col gap-2">
-      <Switch color="light" />
-      <Switch color="black" />
-      <Switch color="blue" />
-      <Switch color="emerald" />
-      <Switch color="lime" />
-    </div>
-    <div className="flex flex-col gap-2">
-      <Switch color="teal" />
-      <Switch color="pink" />
-      <Switch color="sky" />
-      <Switch color="purple" />
-      <Switch color="indigo" />
-    </div>
-  </div>
-  <div className="block w-full py-0">
-    ```jsx code copy
-    <Switch color="red" />
-    ```
-  </div>
-  <div className="block w-full py-0">
-    ```jsx code copy
-    <Switch color="yellow" />
-    ```
-  </div>
-  <div className="block w-full py-0">
-    ```jsx code copy
-    <Switch color="green" />
-    ```
-  </div>
-  <div className="block w-full py-0">
-    ```jsx code copy
-    <Switch color="cyan" />
-    ```
-  </div>
-  <div className="block w-full py-0">
-    ```jsx code copy
-    <Switch color="dark" />
-    ```
-  </div>
-</div>
-
-<div className="flex justify-start items-start bg-cyan-500/10 w-full pl-6 p-2 rounded-xl py-4">
-  <Info className="inline" /> There are more color properties. Take your time to
-  explore
-</div>

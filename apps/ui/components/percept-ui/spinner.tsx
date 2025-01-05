@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef } from "react";
 
 import { cva, VariantProps } from "class-variance-authority";
+import { LoaderCircle } from "lucide-react";
 
 export const spinnerColors = {
   black: "black",
@@ -29,34 +30,29 @@ export const spinnerColors = {
 export type SpinnerColors = keyof typeof spinnerColors;
 
 export const colorClasses = {
-  blue: " border-blue-600",
-  red: " border-red-600",
-  green: " border-green-600",
-  yellow: " border-yellow-600",
-  cyan: " border-cyan-600",
-  gray: " border-gray-600",
-  emerald: " border-emerald-600",
-  rose: " border-rose-600",
-  amber: " border-amber-600",
-  orange: " border-orange-600",
-  pink: " border-pink-600",
-  purple: " border-purple-600",
-  indigo: " border-indigo-600",
-  teal: " border-teal-600",
-  lime: " border-lime-600",
-  sky: " border-sky-600",
-  black: " border-black dark:border-slate-400",
-  dark: " dark:border-slate-300 border-slate-700",
-  light: " border-slate-900 dark:border-white",
+  blue: " text-blue-600",
+  red: " text-red-600",
+  green: " text-green-600",
+  yellow: " text-yellow-600",
+  cyan: " text-cyan-600",
+  gray: " text-gray-600",
+  emerald: " text-emerald-600",
+  rose: " text-rose-600",
+  amber: " text-amber-600",
+  orange: " text-orange-600",
+  pink: " text-pink-600",
+  purple: " text-purple-600",
+  indigo: " text-indigo-600",
+  teal: " text-teal-600",
+  lime: " text-lime-600",
+  sky: " text-sky-600",
+  black: " text-black dark:text-slate-400",
+  dark: " dark:text-slate-300 text-slate-700",
+  light: " text-slate-900 dark:text-white",
 };
 
 export const spinnerVariants = cva(
-  [
-    "transition-colors duration-300",
-    "inline-block",
-    "rounded-[100%]",
-    "border-t-2 animate-spin",
-  ],
+  ["inline-block", "rounded-[100%]", "animate-spin"],
   {
     variants: {
       size: {
@@ -74,11 +70,13 @@ export const spinnerVariants = cva(
         {} as Record<SpinnerColors, string>
       ),
     },
-    compoundVariants: (Object.keys(spinnerColors) as SpinnerColors[]).flatMap((scheme) => [
-      {
-        color: scheme,
-      },
-    ]),
+    compoundVariants: (Object.keys(spinnerColors) as SpinnerColors[]).flatMap(
+      (scheme) => [
+        {
+          color: scheme,
+        },
+      ]
+    ),
     defaultVariants: {
       size: "xl",
       color: "blue",
@@ -86,13 +84,15 @@ export const spinnerVariants = cva(
   }
 );
 
-export type SpinnerProps = VariantProps<typeof spinnerVariants> & ComponentProps<"div">
+export type SpinnerProps = VariantProps<typeof spinnerVariants> & {
+  color?: SpinnerColors;
+  size?: string;
+  className?: string;
+};
 
-export const Spinner = forwardRef<HTMLInputElement, SpinnerProps>(
-  ({ className, color, size, ...props }, forwardedRef) => (
-    <div
-      {...props}
-      ref={forwardedRef}
+export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
+  ({ className, color, size }, ref) => (
+    <LoaderCircle
       className={cn(className, spinnerVariants({ size, className, color }))}
     />
   )
