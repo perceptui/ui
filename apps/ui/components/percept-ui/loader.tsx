@@ -91,7 +91,7 @@ type LoaderProps = VariantProps<typeof loaderVariants> & {
 };
 
 export const Loader = forwardRef<HTMLDivElement, LoaderProps>(
-  ({ className, color, size }, ref) => (
+  ({ className, color, size }) => (
     <LoaderIcon
       className={cn(className, loaderVariants({ size, className, color }))}
     />

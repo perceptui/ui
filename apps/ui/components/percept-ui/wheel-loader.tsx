@@ -91,7 +91,7 @@ type WheelLoaderProps = VariantProps<typeof wheelLoaderVariants> & {
 };
 
 export const WheelLoader = forwardRef<HTMLDivElement, WheelLoaderProps>(
-  ({ className, color, size }, ref) => (
+  ({ className, color, size }) => (
     <LoaderPinwheel
       className={cn(className, wheelLoaderVariants({ size, className, color }))}
     />
