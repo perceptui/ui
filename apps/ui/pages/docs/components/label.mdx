@@ -1,0 +1,66 @@
+import { Label } from "@/components/percept-ui/label";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Label</h1>
+<p className="text-xl">Renders an accessible label associated with controls.</p>
+<IssueHeader source="components/label/label" />
+
+
+<ComponentPreview component={
+  <Label>This is the label</Label>
+    }>
+```jsx code copy
+import { Label } from "@/components/percept-ui/label"
+
+export function LabelDemo() {
+  return (
+    <Label>This is the label</Label>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add label`}
+  yarnCommand={`npx @perceptui/cli@latest add label`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add label`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Label
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx code copy
+import { Label } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <Label>This is the label</Label>
+    }>
+```jsx code copy
+import { Label } from "@perceptui/ui"
+
+export function LabelDemo() {
+  return (
+    <Label>This is the label</Label>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type     | Description | Default |
+| :-------- | :------- | :---------- | :------ |
+| className | `string` | className   | \_      |

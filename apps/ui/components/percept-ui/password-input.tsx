@@ -9,7 +9,6 @@ import { cva } from "class-variance-authority";
 export const passwordInputVariants = cva(
   [
     "w-full",
-    "font-semibold",
     "focus:outline-none outline-none",
     "px-2 py-1",
     "text-slate-700 focus:border-blue-500",
@@ -35,11 +34,11 @@ export const passwordInputVariants = cva(
     compoundVariants: [
       {
         variant: "classic",
-        className: `border border-foreground`,
+        className: `border-2 border-foreground focus:shadow-sm focus:shadow-blue-400`,
       },
       {
         variant: "standard",
-        className: `rounded-none`,
+        className: `border-b-2 border-b-foreground rounded-none`,
       },
       {
         variant: "ghost",
@@ -66,19 +65,16 @@ export const PasswordInput = forwardRef<HTMLInputElement, passwordInputProps>(
   ) => {
     const [showPassword, setShowPassword] = useState<boolean>(false);
     return (
-      <div
-        ref={forwardedRef}
-        className={cn(
-          "relative p-1 ps-2",
-          className,
-          passwordInputVariants({ variant, radius })
-        )}
-      >
+      <div ref={forwardedRef} className={cn("relative p-1 ps-2 w-full", className)}>
         <input
           placeholder={placeholder}
           type={showPassword ? "text" : "password"}
           {...props}
-          className="w-full focus:outline-none bg-transparent dark:text-white pr-12 border-none"
+          className={cn(
+            "w-full focus:outline-none bg-transparent text-foreground pr-12",
+            className,
+            passwordInputVariants({ variant, radius })
+          )}
         />
         <button
           type="button"

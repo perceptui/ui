@@ -6,7 +6,11 @@ import { Slider } from "@/components/percept-ui/slider";
 import { Switch } from "@/components/percept-ui/switch";
 
 export const ComponentShowCaseItems = [
-  { title: "Slider", component: <Slider color="dark" /> },
+  {
+    title: "Slider",
+    component: <Slider color="dark" />,
+    link: "docs/components/slider",
+  },
   {
     title: "Alert",
     component: (
@@ -17,10 +21,12 @@ export const ComponentShowCaseItems = [
         className="text-xs"
       />
     ),
+    link: "/docs/components/alert",
   },
   {
     title: "Button",
     component: <Button>Start Building</Button>,
+    link: "/docs/components/button",
   },
   // {
   //   title: "Hover Effects",
@@ -63,10 +69,12 @@ export const ComponentShowCaseItems = [
   {
     title: "Password Input",
     component: <PasswordInput />,
+    link: "/docs/components/password-input",
   },
   {
     title: "Switch",
     component: <Switch />,
+    link: "/docs/components/switch",
   },
   {
     title: "Badge",
@@ -75,5 +83,6 @@ export const ComponentShowCaseItems = [
         Percept UI Is Live Now
       </Badge>
     ),
+    link: "/docs/components/badge",
   },
 ];

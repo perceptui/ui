@@ -15,8 +15,8 @@ export const inputVariants = cva(
   {
     variants: {
       variant: {
-        classic: "transition-colors duration-300 border",
-        standard: "transition-colors duration-300 border-b",
+        classic: "transition-colors duration-300 border-2 border-foreground",
+        standard: "transition-colors duration-300 border-b-2 border-b-foreground",
         ghost: "border-0 transition-colors duration-300",
       },
       radius: {
@@ -31,7 +31,7 @@ export const inputVariants = cva(
     compoundVariants: [
       {
         variant: "classic",
-        className: `focus:shadow-sm focus:shadow-blue-400 rounded-md border-gray-300`,
+        className: `focus:shadow-sm focus:shadow-blue-400 border-gray-300`,
       },
       {
         variant: "standard",

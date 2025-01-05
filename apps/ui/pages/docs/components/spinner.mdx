@@ -1,0 +1,120 @@
+import { Spinner } from "@perceptui/ui";
+import { IssueHeader } from "@/components/issue-header";
+import { Info } from "lucide-react";
+
+<h1 className="text-4xl font-bold mt-5">Spinner</h1>
+<p className="text-xl">Used to allow users to make selections from a range of values.</p>
+<IssueHeader source="components/spinner/spinner" />
+
+Start using via importing:
+
+```tsx code copy
+import { Spinner } from "@perceptui/ui";
+```
+
+<div className="flex flex-col my-6 w-full">
+  <div className="flex w-full gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Spinner/>
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner/>
+    ```
+  </div>
+</div>
+
+## API References
+
+| Prop      | Type     | Description | Default |
+| :-------- | :------- | :---------- | :------ |
+| color     | `string`                       | Color of the Spinner | blue    |
+| size      | `"xs"\|"sm"\|"md"\|"lg"\|"xl"` | Size of the Spinner  | md      |
+| className | `string`                       | className          | \_      |
+
+## Examples
+
+### Color
+
+<div className="flex flex-col my-6 w-full">
+  <div className="flex flex-wrap gap-2 items-center justify-start px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Spinner color="red"/>
+    <Spinner color="light"/>
+    <Spinner color="yellow"/>
+    <Spinner color="cyan"/>
+    <Spinner color="teal"/>
+    <Spinner color="emerald"/>
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner color="red"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner color="light"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner color="yellow"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner color="cyan"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner color="teal"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner color="emerald"/>
+    ```
+  </div>
+</div>
+
+<div className="flex justify-start items-start bg-cyan-500/10 w-full pl-6 p-2 rounded-xl py-4">
+  <Info className="inline" /> There are more color properties. Take your time to
+  explore
+</div>
+
+
+### Size
+
+<div className="flex flex-col my-6 w-full">
+  <div className="flex flex-wrap gap-2 items-end justify-start px-3 w-full p-4 bg-slate-500/15 mb-2 rounded-lg">
+    <Spinner size="xs"/>
+    <Spinner size="sm"/>
+    <Spinner size="md"/>
+    <Spinner size="lg"/>
+    <Spinner size="xl"/>
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner size="xs"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner size="sm"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner size="md"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner size="lg"/>
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Spinner size="xl"/>
+    ```
+  </div>
+</div>

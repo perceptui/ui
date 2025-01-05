@@ -1,0 +1,91 @@
+import { Switch } from "@perceptui/ui";
+import { IssueHeader } from "@/components/issue-header";
+import { Info } from "lucide-react";
+
+<h1 className="text-4xl font-bold mt-5">Switch</h1>
+<p className="text-xl">Renders a Switch.</p>
+<IssueHeader source="components/switch/switch" />
+
+Start using via importing:
+
+```tsx code copy
+import { Switch } from "@perceptui/ui";
+```
+
+<div className="flex flex-col my-6 w-full">
+  <div className="flex w-full gap-2 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Switch />
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Switch />
+    ```
+  </div>
+</div>
+
+## API References
+
+| Prop      | Type     | Description         | Default |
+| :-------- | :------- | :------------------ | :------ |
+| color     | `string` | Color of the Slider | blue    |
+| className | `string` | className           | \_      |
+
+## Examples
+
+### Color
+
+<div className="flex flex-col my-6 w-full">
+  <div className="flex flex-wrap items-center justify-around px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <div className="flex flex-col gap-2">
+      <Switch color="red" />
+      <Switch color="yellow" />
+      <Switch color="green" />
+      <Switch color="cyan" />
+      <Switch color="dark" />
+    </div>
+    <div className="flex flex-col gap-2">
+      <Switch color="light" />
+      <Switch color="black" />
+      <Switch color="blue" />
+      <Switch color="emerald" />
+      <Switch color="lime" />
+    </div>
+    <div className="flex flex-col gap-2">
+      <Switch color="teal" />
+      <Switch color="pink" />
+      <Switch color="sky" />
+      <Switch color="purple" />
+      <Switch color="indigo" />
+    </div>
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Switch color="red" />
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Switch color="yellow" />
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Switch color="green" />
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Switch color="cyan" />
+    ```
+  </div>
+  <div className="block w-full py-0">
+    ```jsx code copy
+    <Switch color="dark" />
+    ```
+  </div>
+</div>
+
+<div className="flex justify-start items-start bg-cyan-500/10 w-full pl-6 p-2 rounded-xl py-4">
+  <Info className="inline" /> There are more color properties. Take your time to
+  explore
+</div>

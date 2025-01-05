@@ -1,0 +1,68 @@
+import { Link } from "@/components/percept-ui/link";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Link</h1>
+<p className="text-xl">Renders an link associated with anchor tag.</p>
+<IssueHeader source="components/link/link" />
+
+
+<ComponentPreview component={
+  <Link href="/">This is a Link, that will take you to an awesome UI Library and Components Distribution System.</Link>
+    }>
+```jsx code copy
+import { Link } from "@/components/percept-ui/link"
+
+export function LinkDemo() {
+  return (
+    <Link href="/">This is a Link, that will take you to an awesome UI Library and Components Distribution System.</Link>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add link`}
+  yarnCommand={`npx @perceptui/cli@latest add link`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add link`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Link
+  from `@perceptui/ui`.
+</Callout>
+
+
+```tsx code copy
+import { Link } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <Link href="/">This is a Link, that will take you to an awesome UI Library and Components Distribution System.</Link>
+    }>
+```jsx code copy
+import { Link } from "@perceptui/ui"
+
+export function LinkDemo() {
+  return (
+    <Link href="/">This is a Link, that will take you to an awesome UI Library and Components Distribution System.</Link>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type     | Description | Default |
+| :-------- | :------- | :---------- | :------ |
+| className | `string` | className   | \_      |
+| href      | `string` | href        | \_      |

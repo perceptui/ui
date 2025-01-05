@@ -1,0 +1,133 @@
+import { Checkbox } from "@/components/percept-ui/checkbox";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Checkbox</h1>
+<p className="text-xl">
+  Used in forms when a user needs to select multiple values from several
+  options.
+</p>
+<IssueHeader source="components/checkbox/checkbox" />
+
+<ComponentPreview component={
+  <Checkbox>Accept terms and conditions</Checkbox>
+    }>
+```jsx code copy
+import { Checkbox } from "@/components/percept-ui/checkbox"
+
+export function CheckboxDemo() {
+  return (
+    <Checkbox>Accept terms and conditions</Checkbox>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add checkbox`}
+  yarnCommand={`npx @perceptui/cli@latest add checkbox`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add checkbox`}
+/>
+
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Checkbox from
+  `@perceptui/ui`.
+</Callout>
+
+```tsx code copy
+import { Checkbox } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <Checkbox>Accept terms and conditions</Checkbox>
+    }>
+```jsx code copy
+import { Checkbox } from "@perceptui/ui"
+
+export function CheckboxDemo() {
+  return (
+    <Checkbox>Accept terms and conditions</Checkbox>
+  )
+}
+```
+</ComponentPreview>
+
+
+## API References
+
+| Prop      | Type                           | Description           | Default |
+| :-------- | :----------------------------- | :-------------------- | :------ |
+| color     | `string`                       | Color of the Checkbox | blue    |
+| className | `string`                       | className             | \_      |
+
+## Examples
+
+### Color
+
+<ComponentPreview component={
+ <div className="flex flex-wrap items-center justify-around px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <div className="flex flex-col gap-2">
+      <Checkbox checked color="red">Checkbox</Checkbox>
+      <Checkbox checked color="yellow">Checkbox</Checkbox>
+      <Checkbox checked color="green">Checkbox</Checkbox>
+      <Checkbox checked color="cyan">Checkbox</Checkbox>
+      <Checkbox checked color="dark">Checkbox</Checkbox>
+    </div>
+    <div className="flex flex-col gap-2">
+      <Checkbox checked color="light">Checkbox</Checkbox>
+      <Checkbox checked color="black">Checkbox</Checkbox>
+      <Checkbox checked color="blue">Checkbox</Checkbox>
+      <Checkbox checked color="emerald">Checkbox</Checkbox>
+      <Checkbox checked color="lime">Checkbox</Checkbox>
+    </div>
+    <div className="flex flex-col gap-2">
+      <Checkbox checked color="teal">Checkbox</Checkbox>
+      <Checkbox checked color="pink">Checkbox</Checkbox>
+      <Checkbox checked color="sky">Checkbox</Checkbox>
+      <Checkbox checked color="purple">Checkbox</Checkbox>
+      <Checkbox checked color="indigo">Checkbox</Checkbox>
+    </div>
+  </div>
+    }>
+```jsx code copy
+import { Checkbox } from "@/components/percept-ui/checkbox"
+
+export function CheckboxColorsDemo() {
+  return (
+     <div className="flex flex-wrap items-center justify-around px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <div className="flex flex-col gap-2">
+      <Checkbox checked color="red">Checkbox</Checkbox>
+      <Checkbox checked color="yellow">Checkbox</Checkbox>
+      <Checkbox checked color="green">Checkbox</Checkbox>
+      <Checkbox checked color="cyan">Checkbox</Checkbox>
+      <Checkbox checked color="dark">Checkbox</Checkbox>
+    </div>
+    <div className="flex flex-col gap-2">
+      <Checkbox checked color="light">Checkbox</Checkbox>
+      <Checkbox checked color="black">Checkbox</Checkbox>
+      <Checkbox checked color="blue">Checkbox</Checkbox>
+      <Checkbox checked color="emerald">Checkbox</Checkbox>
+      <Checkbox checked color="lime">Checkbox</Checkbox>
+    </div>
+    <div className="flex flex-col gap-2">
+      <Checkbox checked color="teal">Checkbox</Checkbox>
+      <Checkbox checked color="pink">Checkbox</Checkbox>
+      <Checkbox checked color="sky">Checkbox</Checkbox>
+      <Checkbox checked color="purple">Checkbox</Checkbox>
+      <Checkbox checked color="indigo">Checkbox</Checkbox>
+    </div>
+  </div>
+  )
+}
+```
+</ComponentPreview>

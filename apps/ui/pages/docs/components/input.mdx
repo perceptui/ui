@@ -1,0 +1,154 @@
+import { Input } from "@/components/percept-ui/input";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Input</h1>
+<p className="text-xl">Input with multiple variants and radius.</p>
+<IssueHeader source="components/input/input" />
+
+<ComponentPreview component={
+    <Input variant="classic" placeholder="Enter your name..." />
+    }>
+```jsx code copy
+import { Input } from "@/components/percept-ui/input"
+
+export function InputDemo() {
+  return (
+    <Input variant="classic" placeholder="Enter your name..." />
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add input`}
+  yarnCommand={`npx @perceptui/cli@latest add input`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add input`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Input
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx code copy
+import { Input } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+    <Input variant="classic" placeholder="Enter your name..." />
+    }>
+```jsx code copy
+import { Input } from "@perceptui/ui";
+
+export function InputDemo() {
+  return (
+    <Input variant="classic" placeholder="Enter your name..." />
+  )
+}
+```
+</ComponentPreview>
+
+
+## API References
+
+| Prop      | Type                                     | Description         | Default |
+| :-------- | :--------------------------------------- | :------------------ | :------ |
+| variant   | `"classic" \| "standard" \| "ghost"`     | Form of the Input   | classic |
+| radius    | `"none"\|"sm"\|"md"\|"lg"\|"xl"\|"full"` | Radius of the Input | lg      |
+| className | `string`                                 | className           | \_      |
+
+## Examples
+
+### Variant
+
+Use the `variant` prop to control the visual style of the input.
+
+#### Classic Variant
+
+<ComponentPreview component={
+    <Input variant="classic" placeholder="Enter your name..." />
+    }>
+```jsx code copy
+import { Input } from "@/components/percept-ui/input"
+
+export function ClassicVariantInputDemo() {
+  return (
+    <Input variant="classic" placeholder="Enter your name..." />
+  )
+}
+```
+</ComponentPreview>
+
+#### Standard Variant
+
+<ComponentPreview component={
+    <Input variant="standard" placeholder="Enter your name..." />
+    }>
+```jsx code copy
+import { Input } from "@/components/percept-ui/input"
+
+export function StandardVariantInputDemo() {
+  return (
+    <Input variant="standard" placeholder="Enter your name..." />
+  )
+}
+```
+</ComponentPreview>
+
+#### Ghost Variant
+
+<ComponentPreview component={
+    <Input variant="ghost" placeholder="Enter your name..." />
+    }>
+```jsx code copy
+import { Input } from "@/components/percept-ui/input"
+
+export function GhostVariantInputDemo() {
+  return (
+    <Input variant="ghost" placeholder="Enter your name..." />
+  )
+}
+```
+</ComponentPreview>
+
+### Radius
+
+Use the `radius` prop to assign a specific radius value.
+
+<ComponentPreview component={
+    <div className="flex flex-col w-full gap-4 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Input variant="classic" radius="none" placeholder="Enter your name..." />
+    <Input variant="classic" radius="sm" placeholder="Enter your name..." />
+    <Input variant="classic" radius="md" placeholder="Enter your name..." />
+    <Input variant="classic" radius="lg" placeholder="Enter your name..." />
+    <Input variant="classic" radius="xl" placeholder="Enter your name..." />
+    <Input variant="classic" radius="full" placeholder="Enter your name..." />
+  </div>
+}>
+
+```jsx code copy
+import { Input } from "@/components/percept-ui/input"
+
+export function InputRadiusDemo() {
+  return (
+<div className="flex flex-col w-full gap-4 p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Input variant="classic" radius="none" placeholder="Enter your name..." />
+    <Input variant="classic" radius="sm" placeholder="Enter your name..." />
+    <Input variant="classic" radius="md" placeholder="Enter your name..." />
+    <Input variant="classic" radius="lg" placeholder="Enter your name..." />
+    <Input variant="classic" radius="xl" placeholder="Enter your name..." />
+    <Input variant="classic" radius="full" placeholder="Enter your name..." />
+  </div>  )
+}
+```
+</ComponentPreview>
