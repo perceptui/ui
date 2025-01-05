@@ -5,7 +5,7 @@ import { cva, VariantProps } from "class-variance-authority";
 
 export const inputVariants = cva(
   [
-    "w-96",
+    "w-full",
     "font-semibold",
     "focus:outline-none",
     "px-2 py-1",

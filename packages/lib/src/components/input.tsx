@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 
 export const inputVariants = cva(
   [
-    "w-96",
+    "w-full",
     "font-semibold",
     "focus:outline-none",
     "px-2 py-1",
@@ -14,8 +14,8 @@ export const inputVariants = cva(
   {
     variants: {
       variant: {
-        classic: "transition-colors duration-300 border",
-        standard: "transition-colors duration-300 border-b",
+        classic: "transition-colors duration-300 border-2 border-foreground",
+        standard: "transition-colors duration-300 border-b-2 border-b-foreground",
         ghost: "border-0 transition-colors duration-300",
       },
       radius: {
@@ -30,7 +30,7 @@ export const inputVariants = cva(
     compoundVariants: [
       {
         variant: "classic",
-        className: `focus:shadow-sm focus:shadow-blue-400 rounded-md border-gray-300`,
+        className: `focus:shadow-sm focus:shadow-blue-400 border-gray-300`,
       },
       {
         variant: "standard",
@@ -48,7 +48,8 @@ export const inputVariants = cva(
   }
 );
 
-export type InputProps = VariantProps<typeof inputVariants> & ComponentProps<"input">
+export type InputProps = VariantProps<typeof inputVariants> &
+  ComponentProps<"input">;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ variant, className, radius, ...props }, forwardedRef) => (

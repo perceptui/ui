@@ -33,7 +33,11 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
           className={cn(
             switchVariants({}),
             className,
-            `${checked ? "bg-black dark:bg-white transition-all duration-300 ease-in-out" : "bg-slate-300 dark:bg-slate-800"}`
+            `${
+              checked
+                ? "bg-black dark:bg-white transition-all duration-300 ease-in-out"
+                : "bg-slate-300 dark:bg-slate-800"
+            }`
           )}
         />
         <label

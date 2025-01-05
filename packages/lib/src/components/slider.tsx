@@ -49,11 +49,7 @@ export const colorClasses = {
 };
 
 export const sliderVariants = cva(
-  [
-    "w-full cursor-pointer",
-    "focus:outline-none",
-    "transition-colors duration-300",
-  ],
+  ["w-full cursor-pointer", "focus:outline-none", "transition-colors duration-300"],
   {
     variants: {
       size: {

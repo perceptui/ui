@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { ComponentProps, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { cva, VariantProps } from "class-variance-authority";
 import { LoaderCircle } from "lucide-react";

@@ -51,7 +51,7 @@ export const colorClasses = {
 
 export const checkboxVariants = cva(
   [
-    "w-5 h-5",
+    "w-5 h-5 cursor-pointer",
     "border-2 border-slate-700",
     "rounded-sm",
     "focus:outline-none",
@@ -59,13 +59,6 @@ export const checkboxVariants = cva(
   ],
   {
     variants: {
-      size: {
-        xs: "w-3 h-3",
-        sm: "w-4 h-4",
-        md: "w-5 h-5",
-        lg: "w-6 h-6",
-        xl: "w-7 h-7",
-      },
       color: Object.keys(checkboxColors).reduce(
         (acc, key) => ({
           ...acc,
@@ -75,7 +68,6 @@ export const checkboxVariants = cva(
       ),
     },
     defaultVariants: {
-      size: "sm",
       color: "blue",
     },
   }
@@ -84,7 +76,7 @@ export type CheckboxProps = VariantProps<typeof checkboxVariants> &
   ComponentProps<"input">;
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ size, color, className, children, ...props }, forwardedRef) => (
+  ({ color, className, children, ...props }, forwardedRef) => (
     <div className="flex items-center justify-start gap-3">
       <input
         id="checkbox"
@@ -93,7 +85,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         type="checkbox"
         className={cn(
           className,
-          checkboxVariants({ size, color, className, ...props })
+          checkboxVariants({ color, className, ...props })
         )}
       />
       <label htmlFor="checkbox">{children}</label>
