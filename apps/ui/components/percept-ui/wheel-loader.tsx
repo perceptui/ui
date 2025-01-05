@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 import { cva, VariantProps } from "class-variance-authority";
-import { LoaderIcon, LoaderPinwheel } from "lucide-react";
+import { LoaderPinwheel } from "lucide-react";
 
 const wheelLoaderColors = {
   black: "black",
@@ -70,13 +70,13 @@ const wheelLoaderVariants = cva(
         {} as Record<WheelLoaderColors, string>
       ),
     },
-    compoundVariants: (Object.keys(wheelLoaderColors) as WheelLoaderColors[]).flatMap(
-      (scheme) => [
-        {
-          color: scheme,
-        },
-      ]
-    ),
+    compoundVariants: (
+      Object.keys(wheelLoaderColors) as WheelLoaderColors[]
+    ).flatMap((scheme) => [
+      {
+        color: scheme,
+      },
+    ]),
     defaultVariants: {
       size: "xl",
       color: "blue",

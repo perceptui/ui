@@ -91,7 +91,7 @@ type SpinnerProps = VariantProps<typeof spinnerVariants> & {
 };
 
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
-  ({ className, color, size }, ref) => (
+  ({ className, color, size }) => (
     <LoaderCircle
       className={cn(className, spinnerVariants({ size, className, color }))}
     />
