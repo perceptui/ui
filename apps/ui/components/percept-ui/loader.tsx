@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 import { cva, VariantProps } from "class-variance-authority";
-import { LoaderCircle } from "lucide-react";
+import { LoaderIcon } from "lucide-react";
 
-const spinnerColors = {
+const loaderColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -27,7 +27,7 @@ const spinnerColors = {
   sky: "sky",
 };
 
-type SpinnerColors = keyof typeof spinnerColors;
+type LoaderColors = keyof typeof loaderColors;
 
 const colorClasses = {
   blue: " text-blue-600",
@@ -51,7 +51,7 @@ const colorClasses = {
   light: " text-slate-900 dark:text-white",
 };
 
-const spinnerVariants = cva(
+const loaderVariants = cva(
   ["inline-block", "rounded-[100%]", "animate-spin"],
   {
     variants: {
@@ -62,15 +62,15 @@ const spinnerVariants = cva(
         lg: "h-9 w-9",
         xl: "h-11 w-11",
       },
-      color: Object.keys(spinnerColors).reduce(
+      color: Object.keys(loaderColors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: colorClasses[key as SpinnerColors],
+          [key]: colorClasses[key as LoaderColors],
         }),
-        {} as Record<SpinnerColors, string>
+        {} as Record<LoaderColors, string>
       ),
     },
-    compoundVariants: (Object.keys(spinnerColors) as SpinnerColors[]).flatMap(
+    compoundVariants: (Object.keys(loaderColors) as LoaderColors[]).flatMap(
       (scheme) => [
         {
           color: scheme,
@@ -84,18 +84,18 @@ const spinnerVariants = cva(
   }
 );
 
-type SpinnerProps = VariantProps<typeof spinnerVariants> & {
-  color?: SpinnerColors;
+type LoaderProps = VariantProps<typeof loaderVariants> & {
+  color?: LoaderColors;
   size?: string;
   className?: string;
 };
 
-export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
+export const Loader = forwardRef<HTMLDivElement, LoaderProps>(
   ({ className, color, size }, ref) => (
-    <LoaderCircle
-      className={cn(className, spinnerVariants({ size, className, color }))}
+    <LoaderIcon
+      className={cn(className, loaderVariants({ size, className, color }))}
     />
   )
 );
 
-Spinner.displayName = "Spinner";
+Loader.displayName = "Loader";

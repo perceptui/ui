@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const badgeColors = {
+const badgeColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -24,9 +24,9 @@ export const badgeColors = {
   sky: "sky",
 };
 
-export type BadgeColors = keyof typeof badgeColors;
+type BadgeColors = keyof typeof badgeColors;
 
-export const colorClasses = {
+const colorClasses = {
   blue: {
     solid: "bg-blue-600 ",
     outline: "text-blue-600 border-blue-500",
@@ -124,7 +124,7 @@ export const colorClasses = {
   },
 };
 
-export const badgeVariants = cva(
+const badgeVariants = cva(
   [
     "rounded-md",
     "inline-flex items-center justify-center",
@@ -181,7 +181,7 @@ export const badgeVariants = cva(
   }
 );
 
-export type badgeProps = VariantProps<typeof badgeVariants> & {
+type badgeProps = VariantProps<typeof badgeVariants> & {
   children: React.ReactNode;
   className?: string;
 };

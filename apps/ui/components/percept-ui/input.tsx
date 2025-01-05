@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const inputVariants = cva(
+const inputVariants = cva(
   [
     "w-full",
     "font-semibold",
@@ -49,7 +49,7 @@ export const inputVariants = cva(
   }
 );
 
-export type InputProps = VariantProps<typeof inputVariants> &
+type InputProps = VariantProps<typeof inputVariants> &
   ComponentProps<"input">;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(

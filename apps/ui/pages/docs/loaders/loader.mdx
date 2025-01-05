@@ -1,0 +1,135 @@
+import { Loader } from "@/components/percept-ui/loader";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Loader</h1>
+<p className="text-xl">
+  Used to show loading states.
+</p>
+<IssueHeader source="components/Loader/Loader" />
+
+<ComponentPreview component={
+  <div className="flex items-center justify-center p-2 w-96 mx-auto">
+    <Loader/>
+  </div>
+    }>
+```jsx code copy
+import { Loader } from "@/components/percept-ui/loader"
+
+export function LoaderDemo() {
+  return (
+    <Loader/>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add loader`}
+  yarnCommand={`npx @perceptui/cli@latest add loader`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add loader`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import Loader
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx code copy
+import { Loader } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <div className="flex items-center justify-center p-2 w-96 mx-auto">
+    <Loader/>
+  </div>
+    }>
+```jsx code copy
+import { Loader } from "@perceptui/ui"
+
+export function LoaderDemo() {
+  return (
+    <Loader/>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type                           | Description          | Default |
+| :-------- | :----------------------------- | :------------------- | :------ |
+| color     | `string`                       | Color of the Loader | blue    |
+| size      | `"xs"\|"sm"\|"md"\|"lg"\|"xl"` | Size of the Loader  | md      |
+| className | `string`                       | className            | \_      |
+
+## Examples
+
+### Color
+
+<ComponentPreview component={
+    <div className="flex flex-wrap gap-2 items-center justify-start px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Loader color="red"/>
+    <Loader color="light"/>
+    <Loader color="yellow"/>
+    <Loader color="cyan"/>
+    <Loader color="teal"/>
+    <Loader color="emerald"/>
+  </div>
+    }>
+```jsx code copy
+import { Loader } from "@/components/percept-ui/loader"
+
+export function LoaderColorsDemo() {
+  return (
+      <div className="flex flex-wrap gap-2 items-center justify-start px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <Loader color="red"/>
+    <Loader color="light"/>
+    <Loader color="yellow"/>
+    <Loader color="cyan"/>
+    <Loader color="teal"/>
+    <Loader color="emerald"/>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+<Callout>There are more color properties. Take your time to explore.</Callout>
+
+### Size
+
+<ComponentPreview component={
+      <div className="flex flex-wrap gap-2 items-end justify-start px-3 w-full p-4 bg-slate-500/15 mb-2 rounded-lg">
+    <Loader size="xs"/>
+    <Loader size="sm"/>
+    <Loader size="md"/>
+    <Loader size="lg"/>
+    <Loader size="xl"/>
+  </div>
+    }>
+```jsx code copy
+import { Loader } from "@/components/percept-ui/loader"
+
+export function LoaderSizeDemo() {
+  return (
+     <div className="flex flex-wrap gap-2 items-end justify-start px-3 w-full p-4 bg-slate-500/15 mb-2 rounded-lg">
+    <Loader size="xs"/>
+    <Loader size="sm"/>
+    <Loader size="md"/>
+    <Loader size="lg"/>
+    <Loader size="xl"/>
+  </div>
+  )
+}
+```
+</ComponentPreview>

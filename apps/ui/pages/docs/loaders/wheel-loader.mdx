@@ -1,0 +1,135 @@
+import { WheelLoader } from "@/components/percept-ui/wheel-loader";
+import { IssueHeader } from "@/components/issue-header";
+import { ComponentPreview } from "@/components/component-preview";
+import { CommandsWrapper } from "@/components/commands-wrapper";
+import { Callout } from "@/components/callout";
+
+<h1 className="text-4xl font-bold mt-5">Loader</h1>
+<p className="text-xl">
+  Used to show loading states.
+</p>
+<IssueHeader source="components/Loader/Loader" />
+
+<ComponentPreview component={
+  <div className="flex items-center justify-center p-2 w-96 mx-auto">
+    <WheelLoader/>
+  </div>
+    }>
+```jsx code copy
+import { WheelLoader } from "@/components/percept-ui/wheel-loader"
+
+export function WheelLoaderDemo() {
+  return (
+    <WheelLoader/>
+  )
+}
+```
+</ComponentPreview>
+
+## Installation
+
+### CLI
+
+<CommandsWrapper
+  description="Add component to your project."
+  npmCommand={`npx @perceptui/cli@latest add wheel-loader`}
+  yarnCommand={`npx @perceptui/cli@latest add wheel-loader`}
+  pnpmCommand={`pnpm dlx @perceptui/cli@latest add wheel-loader`}
+/>
+
+### Import from `@perceptui/ui`
+
+<Callout>
+  **Note:** If you have installed `@perceptui/ui` package, then import WheelLoader
+  from `@perceptui/ui`.
+</Callout>
+
+```tsx code copy
+import { WheelLoader } from "@perceptui/ui";
+```
+
+<ComponentPreview component={
+  <div className="flex items-center justify-center p-2 w-96 mx-auto">
+    <WheelLoader/>
+  </div>
+    }>
+```jsx code copy
+import { WheelLoader } from "@perceptui/ui"
+
+export function LoaderDemo() {
+  return (
+    <WheelLoader/>
+  )
+}
+```
+</ComponentPreview>
+
+## API References
+
+| Prop      | Type                           | Description          | Default |
+| :-------- | :----------------------------- | :------------------- | :------ |
+| color     | `string`                       | Color of the WheelLoader | blue    |
+| size      | `"xs"\|"sm"\|"md"\|"lg"\|"xl"` | Size of the WheelLoader  | md      |
+| className | `string`                       | className            | \_      |
+
+## Examples
+
+### Color
+
+<ComponentPreview component={
+    <div className="flex flex-wrap gap-2 items-center justify-start px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <WheelLoader color="red"/>
+    <WheelLoader color="light"/>
+    <WheelLoader color="yellow"/>
+    <WheelLoader color="cyan"/>
+    <WheelLoader color="teal"/>
+    <WheelLoader color="emerald"/>
+  </div>
+    }>
+```jsx code copy
+import { WheelLoader } from "@/components/percept-ui/wheel-loader"
+
+export function WheelLoaderColorsDemo() {
+  return (
+      <div className="flex flex-wrap gap-2 items-center justify-start px-3 w-full p-4 bg-blue-500/15 mb-2 rounded-lg">
+    <WheelLoader color="red"/>
+    <WheelLoader color="light"/>
+    <WheelLoader color="yellow"/>
+    <WheelLoader color="cyan"/>
+    <WheelLoader color="teal"/>
+    <WheelLoader color="emerald"/>
+  </div>
+  )
+}
+```
+</ComponentPreview>
+
+<Callout>There are more color properties. Take your time to explore.</Callout>
+
+### Size
+
+<ComponentPreview component={
+      <div className="flex flex-wrap gap-2 items-end justify-start px-3 w-full p-4 bg-slate-500/15 mb-2 rounded-lg">
+    <WheelLoader size="xs"/>
+    <WheelLoader size="sm"/>
+    <WheelLoader size="md"/>
+    <WheelLoader size="lg"/>
+    <WheelLoader size="xl"/>
+  </div>
+    }>
+```jsx code copy
+import { WheelLoader } from "@/components/percept-ui/wheel-loader"
+
+export function WheelLoaderSizeDemo() {
+  return (
+     <div className="flex flex-wrap gap-2 items-end justify-start px-3 w-full p-4 bg-slate-500/15 mb-2 rounded-lg">
+    <WheelLoader size="xs"/>
+    <WheelLoader size="sm"/>
+    <WheelLoader size="md"/>
+    <WheelLoader size="lg"/>
+    <WheelLoader size="xl"/>
+  </div>
+  )
+}
+```
+</ComponentPreview>

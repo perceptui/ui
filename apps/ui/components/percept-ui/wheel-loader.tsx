@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 import { cva, VariantProps } from "class-variance-authority";
-import { LoaderCircle } from "lucide-react";
+import { LoaderIcon, LoaderPinwheel } from "lucide-react";
 
-const spinnerColors = {
+const wheelLoaderColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -27,7 +27,7 @@ const spinnerColors = {
   sky: "sky",
 };
 
-type SpinnerColors = keyof typeof spinnerColors;
+type WheelLoaderColors = keyof typeof wheelLoaderColors;
 
 const colorClasses = {
   blue: " text-blue-600",
@@ -51,7 +51,7 @@ const colorClasses = {
   light: " text-slate-900 dark:text-white",
 };
 
-const spinnerVariants = cva(
+const wheelLoaderVariants = cva(
   ["inline-block", "rounded-[100%]", "animate-spin"],
   {
     variants: {
@@ -62,15 +62,15 @@ const spinnerVariants = cva(
         lg: "h-9 w-9",
         xl: "h-11 w-11",
       },
-      color: Object.keys(spinnerColors).reduce(
+      color: Object.keys(wheelLoaderColors).reduce(
         (acc, key) => ({
           ...acc,
-          [key]: colorClasses[key as SpinnerColors],
+          [key]: colorClasses[key as WheelLoaderColors],
         }),
-        {} as Record<SpinnerColors, string>
+        {} as Record<WheelLoaderColors, string>
       ),
     },
-    compoundVariants: (Object.keys(spinnerColors) as SpinnerColors[]).flatMap(
+    compoundVariants: (Object.keys(wheelLoaderColors) as WheelLoaderColors[]).flatMap(
       (scheme) => [
         {
           color: scheme,
@@ -84,18 +84,18 @@ const spinnerVariants = cva(
   }
 );
 
-type SpinnerProps = VariantProps<typeof spinnerVariants> & {
-  color?: SpinnerColors;
+type WheelLoaderProps = VariantProps<typeof wheelLoaderVariants> & {
+  color?: WheelLoaderColors;
   size?: string;
   className?: string;
 };
 
-export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
+export const WheelLoader = forwardRef<HTMLDivElement, WheelLoaderProps>(
   ({ className, color, size }, ref) => (
-    <LoaderCircle
-      className={cn(className, spinnerVariants({ size, className, color }))}
+    <LoaderPinwheel
+      className={cn(className, wheelLoaderVariants({ size, className, color }))}
     />
   )
 );
 
-Spinner.displayName = "Spinner";
+WheelLoader.displayName = "WheelLoader";

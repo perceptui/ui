@@ -6,7 +6,7 @@ import { VariantProps } from "class-variance-authority";
 
 import { cva } from "class-variance-authority";
 
-export const passwordInputVariants = cva(
+const passwordInputVariants = cva(
   [
     "w-full",
     "focus:outline-none outline-none",
@@ -52,7 +52,7 @@ export const passwordInputVariants = cva(
   }
 );
 
-export type passwordInputProps = VariantProps<typeof passwordInputVariants> &
+type passwordInputProps = VariantProps<typeof passwordInputVariants> &
   ComponentProps<"input"> & {
     className?: string;
     placeholder?: string;

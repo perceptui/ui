@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const checkboxColors = {
+const checkboxColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -25,9 +25,9 @@ export const checkboxColors = {
   sky: "sky",
 };
 
-export type CheckBoxColors = keyof typeof checkboxColors;
+type CheckBoxColors = keyof typeof checkboxColors;
 
-export const colorClasses = {
+const colorClasses = {
   blue: "checked:accent-blue-600 hover:checked:accent-blue-500",
   red: "checked:accent-red-600 hover:checked:accent-red-500",
   green: "checked:accent-green-600 hover:checked:accent-green-500",
@@ -50,7 +50,7 @@ export const colorClasses = {
     "checked:accent-white hover:accent:checked-slate-100 dark:accent-slate-800",
 };
 
-export const checkboxVariants = cva(
+const checkboxVariants = cva(
   [
     "w-5 h-5 cursor-pointer",
     "border-2 border-slate-700",
@@ -73,7 +73,7 @@ export const checkboxVariants = cva(
     },
   }
 );
-export type CheckboxProps = VariantProps<typeof checkboxVariants> &
+type CheckboxProps = VariantProps<typeof checkboxVariants> &
   ComponentProps<"input">;
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(

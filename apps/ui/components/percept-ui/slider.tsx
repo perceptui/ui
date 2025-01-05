@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const sliderColors = {
+const sliderColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -25,9 +25,9 @@ export const sliderColors = {
   sky: "sky",
 };
 
-export type SliderColors = keyof typeof sliderColors;
+type SliderColors = keyof typeof sliderColors;
 
-export const colorClasses = {
+const colorClasses = {
   blue: "accent-blue-600",
   red: "accent-red-600",
   green: "accent-green-600",
@@ -49,7 +49,7 @@ export const colorClasses = {
   light: "accent-slate-900 dark:accent-white",
 };
 
-export const sliderVariants = cva(
+const sliderVariants = cva(
   ["w-full cursor-pointer", "focus:outline-none", "transition-colors duration-300"],
   {
     variants: {
@@ -82,7 +82,7 @@ export const sliderVariants = cva(
   }
 );
 
-export type SliderProps = VariantProps<typeof sliderVariants> &
+type SliderProps = VariantProps<typeof sliderVariants> &
   ComponentProps<"input">;
 
 export const Slider = forwardRef<HTMLInputElement, SliderProps>(

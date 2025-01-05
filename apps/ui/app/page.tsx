@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
-import { ComponentsShowCase } from "@/components/showcase";
+import { ComponentsShowCase, LoadersShowCase } from "@/components/showcase";
 export default function Component() {
   // const fadeIn = {
   //   initial: { opacity: 0, y: 20 },
@@ -25,6 +25,8 @@ export default function Component() {
       <Hero />
       <div className="lg:px-24 px-6 mb-5 font-bold text-lg">Components</div>
       <ComponentsShowCase />
+      <div className="lg:px-24 px-6 mb-5 font-bold text-lg">Loaders</div>
+      <LoadersShowCase />
       <div className="flex flex-col items-center justify-center px-5 opacity-100 -z-10">
         <motion.div
           variants={stagger}
