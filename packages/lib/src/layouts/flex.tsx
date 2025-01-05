@@ -1,7 +1,6 @@
-import { FlexProps } from "@/types";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { cva } from "class-variance-authority";
+import { cva, VariantProps } from "class-variance-authority";
 
 export const flexVariants = cva(["flex w-full"], {
   variants: {
@@ -90,6 +89,11 @@ export const flexVariants = cva(["flex w-full"], {
     justify: "start",
   },
 });
+
+export type FlexProps = VariantProps<typeof flexVariants> & {
+  children: React.ReactNode;
+  className?: string;
+};
 
 export const Flex: React.FC<FlexProps> = ({
   children,
