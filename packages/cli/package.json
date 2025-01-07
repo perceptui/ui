@@ -1,6 +1,6 @@
 {
   "name": "@perceptui/cli",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "A CLI tool for initializing projects with predefined templates.",
   "main": "dist/index.js",
   "type": "module",
@@ -24,6 +24,7 @@
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
     "degit": "^2.8.4",
+    "dotenv": "^16.4.7",
     "enquirer": "^2.4.1",
     "node-fetch": "^3.3.2",
     "ora": "^8.1.1",
