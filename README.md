@@ -15,11 +15,11 @@ Welcome to **Percept UI**, a comprehensive React component library designed to e
 
 <h3>An open-source component library optimized for fast development, easy maintenance, and accessibility.</h3>
 
-<!-- ## Quickstart
+## Quickstart
 
 **The easiest way to get started with Percept UI is by installing it.**
 
-```code
+```bash code
 
 npm install percept-ui
 
@@ -27,7 +27,7 @@ npm install percept-ui
 
 ## Documentation
 
-For full documentation, visit [DOCUMENTATION](https://docs-percept-ui.vercel.app/docs/getting-started).
+For full documentation, visit [DOCUMENTATION](https://percepui.codebrise.tech/docs).
 
 ## Community
 
@@ -35,4 +35,4 @@ Join our community to get help, share your knowledge, and stay updated on the la
 
 ## How to contribute
 
-Go to [CONTRIBUTING File](https://github.com/CuriousCoder00/percept-ui/tree/main/.github/CONTRIBUTING.md) and follow instructions to contribute to this project. -->
+Go to [CONTRIBUTING File](https://github.com/perceptui/ui/tree/main/CONTRIBUTING.md) and follow instructions to contribute to this project.
