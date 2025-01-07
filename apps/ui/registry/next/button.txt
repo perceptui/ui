@@ -6,7 +6,7 @@ import { VariantProps } from "class-variance-authority";
 
 import { cva } from "class-variance-authority";
 
-export const buttonColors = {
+const buttonColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -28,9 +28,9 @@ export const buttonColors = {
   sky: "sky",
 };
 
-export type ButtonColors = keyof typeof buttonColors;
+type ButtonColors = keyof typeof buttonColors;
 
-export const colorClasses = {
+const colorClasses = {
   blue: {
     solid: "bg-blue-600 hover:bg-blue-500",
     outline:
@@ -146,7 +146,7 @@ export const colorClasses = {
   },
 };
 
-export const buttonVariants = cva(
+const buttonVariants = cva(
   [
     "rounded-md",
     "font-semibold",
@@ -211,7 +211,7 @@ export const buttonVariants = cva(
   }
 );
 
-export type ButtonProps = VariantProps<typeof buttonVariants> &
+type ButtonProps = VariantProps<typeof buttonVariants> &
   ComponentProps<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

@@ -10,7 +10,7 @@ import React, {
 } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const radioColors = {
+const radioColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -32,9 +32,9 @@ export const radioColors = {
   sky: "sky",
 };
 
-export type RadioColors = keyof typeof radioColors;
+type RadioColors = keyof typeof radioColors;
 
-export const colorClasses: Record<RadioColors, string> = {
+const colorClasses: Record<RadioColors, string> = {
   black: "checked:accent-black hover:checked:accent-gray-900",
   dark: "checked:accent-slate-800 hover:checked:accent-gray-700",
   light: "checked:accent-white hover:checked:accent-slate-100",
@@ -56,7 +56,7 @@ export const colorClasses: Record<RadioColors, string> = {
   sky: "checked:accent-sky-600 hover:checked:accent-sky-500",
 };
 
-export const radioVariants = cva(
+const radioVariants = cva(
   ["w-5 h-5", "border-2", "rounded-sm", "transition-colors duration-300"],
   {
     variants: {
@@ -82,19 +82,19 @@ export const radioVariants = cva(
   }
 );
 
-export type RadioProps = VariantProps<typeof radioVariants> &
+type RadioProps = VariantProps<typeof radioVariants> &
   ComponentProps<"input"> & {
     label?: string;
   };
 
-export type RadioGroupProps = {
+type RadioGroupProps = {
   children: React.ReactNode;
   defaultValue?: string;
   onChange?: (value: string) => void;
   name?: string;
 };
 
-export const RadioGroupContext = createContext<{
+const RadioGroupContext = createContext<{
   value: string;
   onChange: (value: string) => void;
   name: string;

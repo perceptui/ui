@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ComponentProps, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const avatarColors = {
+const avatarColors = {
   black: "black",
   dark: "slate",
   light: "white",
@@ -25,9 +25,9 @@ export const avatarColors = {
   sky: "sky",
 };
 
-export type AvatarColors = keyof typeof avatarColors;
+type AvatarColors = keyof typeof avatarColors;
 
-export const colorClasses = {
+const colorClasses = {
   blue: {
     solid: "bg-blue-600 hover:bg-blue-500",
     outline: "text-blue-600 border-blue-500",
@@ -125,7 +125,7 @@ export const colorClasses = {
   },
 };
 
-export const avatarVariants = cva(
+const avatarVariants = cva(
   [
     "w-10 h-10 flex justify-center items-center",
     "rounded-md overflow-hidden",
@@ -183,16 +183,16 @@ export const avatarVariants = cva(
   }
 );
 
-export type avatarProps = VariantProps<typeof avatarVariants> &
+type avatarProps = VariantProps<typeof avatarVariants> &
   ComponentProps<"div">;
 
-export type avatarImageProps = VariantProps<typeof avatarVariants> &
+type avatarImageProps = VariantProps<typeof avatarVariants> &
   ComponentProps<"img"> & {
     src?: string;
     alt: string;
   };
 
-export type avatarFallbackProps = VariantProps<typeof avatarVariants> &
+type avatarFallbackProps = VariantProps<typeof avatarVariants> &
   ComponentProps<"div"> & {
     src?: string;
   };

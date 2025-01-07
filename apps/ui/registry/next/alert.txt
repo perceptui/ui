@@ -9,16 +9,16 @@ import { BiError } from "react-icons/bi";
 import { ComponentProps, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-export const alertTypes = {
+const alertTypes = {
   success: "green",
   error: "red",
   warning: "yellow",
   info: "blue",
 };
 
-export type AlertColorTypes = keyof typeof alertTypes;
+type AlertColorTypes = keyof typeof alertTypes;
 
-export const AlertTypeClasses = {
+const AlertTypeClasses = {
   success: {
     solid: "bg-green-800 text-white",
     outline:
@@ -49,7 +49,7 @@ export const AlertTypeClasses = {
   },
 };
 
-export const alertVariants = cva(
+const alertVariants = cva(
   ["p-2 rounded border flex justify-start gap-2 w-full"],
   {
     variants: {
@@ -91,7 +91,7 @@ export const alertVariants = cva(
   }
 );
 
-export type alertProps = VariantProps<typeof alertVariants> &
+type alertProps = VariantProps<typeof alertVariants> &
   ComponentProps<"div"> & {
     message?: string;
     icon?: React.ReactNode;
