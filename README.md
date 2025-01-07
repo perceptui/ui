@@ -27,7 +27,7 @@ npm install percept-ui
 
 ## Documentation
 
-For full documentation, visit [DOCUMENTATION](https://percepui.codebrise.tech/docs).
+For full documentation, visit [DOCUMENTATION](https://perceptui.codebrise.tech/docs).
 
 ## Community
 
