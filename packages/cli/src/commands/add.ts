@@ -178,11 +178,9 @@ export const add = async (components: string[]) => {
     const detectSpinner = ora("Detecting project type...").start();
     detectSpinner.succeed("Project type detected.");
 
-    const componentsList = [
-        "alert", "avatar", "badge", "button", "checkbox", "input",
-        "label", "link", "password-input", "radio", "slider",
-        "spinner", "switch"
-    ];
+    const componentsList = await axios.get(process.env.COMPONENTS_LIST_URL as string).then((response) => {
+        return response.data;
+    });
 
     if (components.length === 0) {
         console.log(chalk.red("No components provided"));
