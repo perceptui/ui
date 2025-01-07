@@ -3,12 +3,6 @@ import path from "path";
 import axios from "axios";
 import chalk from "chalk";
 import ora from 'ora';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-const registryApiUrl = process.env.REGISTRY_API_URL;
-const componentsRegistryUrl = process.env.COMPONENTS_REGISTRY_UTL;
 
 enum ProjectType {
     REACT = "REACT",
@@ -88,10 +82,10 @@ const getComponent = async ({
         let content: string;
         switch (projectType) {
             case ProjectType.REACT:
-                repoUrl = componentsRegistryUrl + `react/${componentName}.txt`;
+                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/ui/registry/react/${componentName}.txt`;
                 break;
             case ProjectType.NEXT_JS:
-                repoUrl = componentsRegistryUrl + `next/${componentName}.txt`;
+                repoUrl = `https://raw.githubusercontent.com/perceptui/ui/refs/heads/main/apps/ui/registry/next/${componentName}.txt`;
                 break;
             default:
                 throw new Error("Unsupported project type");
@@ -184,7 +178,7 @@ export const add = async (components: string[]) => {
     const detectSpinner = ora("Detecting project type...").start();
     detectSpinner.succeed("Project type detected.");
 
-    const componentsList = await axios.get(registryApiUrl as string).then((response) => {
+    const componentsList = await axios.get("https://perceptui.codebrise.tech/api/registry").then((response) => {
         return response.data;
     });
 
