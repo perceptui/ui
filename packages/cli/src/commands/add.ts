@@ -156,13 +156,13 @@ const addComponent = async (componentName: string) => {
                     componentName,
                     projectType: ProjectType.NEXT_JS,
                 });
-                createComponent(path.join(currentDir, "src"), componentName, 'use client;' + data);
+                createComponent(path.join(currentDir, "src"), componentName, data);
             } else if (isNextAppRouter || isPageRouter) {
                 let data = await getComponent({
                     componentName,
                     projectType: ProjectType.NEXT_JS,
                 });
-                createComponent(currentDir, componentName, 'use client;' + data);
+                createComponent(currentDir, componentName, data);
             }
         } else {
             console.log(chalk.red("❌ Project type not detected."));
