@@ -18,4 +18,7 @@ export default {
   loaders: {
     title: "Loaders",
   },
+  blocks: {
+    title: "Blocks",
+  },
 };
