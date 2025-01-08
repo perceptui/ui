@@ -6,5 +6,11 @@ export default {
     },
     "wheel-loader":{
         title: <Title title="Wheel Loader" isNew />
+    },
+    "music-loader":{
+        title: <Title title="Music Loader" isNew />
+    },
+    "bounce-loader":{
+        title: <Title title="Bounce Loader" isNew />
     }
 }

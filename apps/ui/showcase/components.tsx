@@ -8,7 +8,7 @@ import { Switch } from "@/components/percept-ui/switch";
 export const ComponentShowCaseItems = [
   {
     title: "Slider",
-    component: <Slider color="dark" />,
+    component: <Slider color="black" />,
     link: "docs/components/slider",
   },
   {
@@ -25,7 +25,7 @@ export const ComponentShowCaseItems = [
   },
   {
     title: "Button",
-    component: <Button>Start Building</Button>,
+    component: <Button color="indigo">Start Building</Button>,
     link: "/docs/components/button",
   },
   // {
@@ -79,7 +79,7 @@ export const ComponentShowCaseItems = [
   {
     title: "Badge",
     component: (
-      <Badge variant={"soft"} radius={"full"} color="emerald">
+      <Badge variant={"soft"}  radius={"full"} color="indigo">
         Percept UI Is Live Now
       </Badge>
     ),
