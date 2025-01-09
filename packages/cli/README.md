@@ -1,6 +1,6 @@
 # PerceptUI CLI
 
-Percept CLI is a command-line tool for initializing projects with predefined templates. It simplifies the setup process by providing ready-to-use starter templates, allowing developers to focus on building applications instead of spending time on configuration.
+Percept CLI is a command-line tool for adding components to your project and initializing projects with predefined templates.
 
 ## Features
 - **Predefined Templates:** Choose from a variety of starter templates for popular frameworks like Vite, React, Tailwind CSS, and more.
@@ -21,39 +21,95 @@ npx @perceptui/cli
 
 ## Usage
 
-### Commands
-1. **Initialize a project:**
-Create a new project with specific template:
+### list
+
+Use the `list` command to list all available templates.
+
+```bash copy
+npx @perceptui/cli@latest list
+```
+
+You will be given a list of all available templates.
+
+```tsx
+Listing available templates...
+
+Available templates:
+
+- vite-react-tailwind
+- vite-react-ts-tailwind
+- vite-react-shadcn
+- next-shadcn
+```
+
+#### Options
+
+```tsx
+Usage: percept-cli list [options]
+
+List all available templates
+
+Options:
+  -h, --help  display help for command
+```
+
+### create
+
+Use the `create` command to initialize configuration and dependencies for a new project.
+
+The `create` command installs dependencies, configures your project with multiple frameworks to help you build faster.
+
+```bash copy
+npx @perceptui/cli@latest create <project-name>
+```
+
+You will be prompted to choose a template:
+
+```txt showLineNumbers
+? Select a template: ...
+> vite-react-Tailwind
+  vite-react-ts-Tailwind
+  vite-react-shadcn
+  next-shadcn
+```
+
+#### Options
+
+```tsx
+Usage: @perceptui/cli create [options] <project-name>
+
+Create a new project from a template
+
+Options:
+  -t, --template <template>  Template to use
+  -p, --path <path>          Path to create the project in (default: ".")
+  -h, --help                 display help for command
+```
+
+### add
+
+Use the `add` command to add components to your project.
+
 ```bash
-percept-cli create <project-name> --template <template-name> [--path <path>]  
+npx @perceptui/cli@latest add [options] [components...]
 ```
 
-- `project-name`: Name of the project.
-- `--template, -t`: Name of the template to use.
-- `--path, -p`: Optional path where the project should be created (default: current directory).
+Add a new component:
 
-```bash copy
-percept-cli create my-app --template vite-react-tailwind  
+#### Options
+
+```tsx
+Usage: shadcn add [options] [components...]
+
+add a component to your project
+
+Arguments:
+  components         the components to add.
+
+Options:
+  -h, --help  display help for command
 ```
 
-2. **List Available Templates:**
-Display all predefined templates:
-
-```bash copy
-percept-cli list  
-```
-
-3. **Add a New Template:**
-
-> Coming soon...
-
-### Templates
-#### Predefined Templates
-The CLI comes with the following templates by default:
-
-- **vite-react-tailwind**
-  - Description: Vite + React + Tailwind CSS starter template.
-  - Repository: vite-react-tailwind-template
 
 
 ### Contributing
